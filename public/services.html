@@ -8,6 +8,7 @@
   <script src="https://cdn.tailwindcss.com"></script>
   <!-- Lucide Icons -->
   <script src="https://unpkg.com/lucide@latest"></script>
+  <link rel="stylesheet" href="style.css">
   <style>
     /* Starfield & Twinkle */
     @keyframes twinkle { 0% { opacity: .1; transform: translateY(0) scale(1)} 50% { opacity: .6; transform: translateY(-20px) scale(1.1)} 100% { opacity: .1; transform: translateY(0) scale(1)} }
@@ -30,7 +31,7 @@
   <!-- Navbar -->
   <nav class="sticky top-0 z-50 backdrop-blur supports-[backdrop-filter]:bg-black/40 border-b border-blue-900/60">
     <div class="max-w-7xl mx-auto flex items-center justify-between px-4 md:px-6 py-3">
-      <a href="#home" class="flex items-center gap-3">
+      <a href="./index.html" class="flex items-center gap-3">
         <span class="inline-flex h-9 w-9 items-center justify-center rounded-xl bg-gradient-to-br from-sky-900 via-blue-900 to-indigo-900 shadow-lg shadow-blue-900/30">
           <i data-lucide="stethoscope" class="w-5 h-5"></i>
         </span>
@@ -40,38 +41,62 @@
         </div>
       </a>
       <div class="hidden md:flex items-center gap-6 text-sm">
-        <a href="#services" class="text-white/80 hover:text-white">Services</a>
+        <a href="./services.html" class="text-white/80 hover:text-white">Services</a>
         <a href="#telemedicine" class="text-white/80 hover:text-white">TMS</a>
         <a href="#about" class="text-white/80 hover:text-white">About</a>
         <a href="#insurance" class="text-white/80 hover:text-white">Insurance</a>
         <a href="#contact" class="text-white/80 hover:text-white">Contact</a>
       </div>
-      <a href="#contact" class="inline-flex items-center gap-2 rounded-xl bg-gradient-to-r from-sky-900 via-blue-900 to-indigo-900 px-4 py-2 text-sm font-semibold shadow-lg shadow-blue-900/30">Book</a>
+      <button class="menu-btn md:hidden" id="menu-btn" aria-label="Toggle menu">
+        <i data-lucide="menu"></i>
+      </button>
+      <!-- <a href="#contact" class="inline-flex items-center gap-2 rounded-xl bg-gradient-to-r from-sky-900 via-blue-900 to-indigo-900 px-4 py-2 text-sm font-semibold shadow-lg shadow-blue-900/30">Book</a> -->
     </div>
   </nav>
+  <nav class="menu-overlay" id="menu-overlay">
+    <ul>
+      <li><a href="./index.html">Home</a></li>
+      <li><a href="#">About</a></li>
+      <li><a href="./services.html">Services</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <script>
+    lucide.createIcons();
+
+    const menuBtn = document.getElementById("menu-btn");
+    const menuOverlay = document.getElementById("menu-overlay");
+    let isOpen = false;
+
+    menuBtn.addEventListener("click", () => {
+      isOpen = !isOpen;
+      menuOverlay.classList.toggle("active", isOpen);
+      menuBtn.innerHTML = isOpen
+        ? '<i data-lucide="x"></i>'
+        : '<i data-lucide="menu"></i>';
+      lucide.createIcons();
+    });
+  </script>
 
   <!-- Hero -->
   <main id="home" class="mx-auto max-w-7xl px-4 md:px-6">
-    <section class="pt-20 md:pt-28">
-      <div class="fade-in flex justify-center">
-        <img src="assets/chsSilverNoBG.png" alt="logo for CHS" style="filter: brightness(1.3); border-radius: 8px;">
-      </div>
-    </section>
 
     <!-- Services -->
     <section id="services" class="mt-24">
       <div class="mx-auto max-w-3xl text-center">
-        <h2 class="text-3xl font-semibold">Services</h2>
-        <p class="mt-3 text-white/80">One constellation of care—connected services designed to keep you well.</p>
+        <h1 class="text-3xl font-semibold">Services</h1>
+        <p class="mt-3 text-white/80">At Celestial Health Solutions, we provide comprehensive, patient-centered care for individuals and families. Our goal is to support your overall health and wellness through a wide range of services, delivered with expertise, compassion, and convenience.</p>
       </div>
-      <div class="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+      <div class="mt-10 grid gap-5 sm:grid-cols-2">
         <!-- Service cards -->
         <div class="backdrop-blur bg-white/5 ring-1 ring-white/10 rounded-2xl p-6">
           <div class="flex items-center gap-3">
             <div class="flex h-10 w-10 items-center justify-center rounded-xl bg-white/10"><i data-lucide="stethoscope" class="w-6 h-6"></i></div>
             <h3 class="text-lg font-semibold">Primary Care</h3>
           </div>
-          <p class="mt-3 text-sm text-white/80">Comprehensive, relationship‑based care, annual physicals, chronic condition management, preventive screenings.</p>
+          <p class="mt-3 text-sm text-white/80">Our primary care services focus on prevention, early detection, and management of chronic conditions. From routine check-ups and vaccinations to managing diabetes, hypertension, and other health concerns, we partner with you to keep your health on track.
+          </p>
         </div>
 
         <div class="backdrop-blur bg-white/5 ring-1 ring-white/10 rounded-2xl p-6">
@@ -79,7 +104,9 @@
             <div class="flex h-10 w-10 items-center justify-center rounded-xl bg-white/10"><i data-lucide="bandage" class="w-6 h-6"></i></div>
             <h3 class="text-lg font-semibold">Wound Care</h3>
           </div>
-          <p class="mt-3 text-sm text-white/80">Advanced, evidence‑based wound management including debridement, dressings, infection control, and diabetic foot care.</p>
+          <p class="mt-3 text-sm text-white/80">We offer advanced wound care for both acute and chronic wounds, including diabetic ulcers, pressure sores, and post-surgical wounds. Our team uses evidence-based treatments and personalized care plans to promote faster healing and prevent complications.
+
+</p>
         </div>
 
         <div class="backdrop-blur bg-white/5 ring-1 ring-white/10 rounded-2xl p-6">
@@ -87,15 +114,8 @@
             <div class="flex h-10 w-10 items-center justify-center rounded-xl bg-white/10"><i data-lucide="brain" class="w-6 h-6"></i></div>
             <h3 class="text-lg font-semibold">Behavioral & Mental Health</h3>
           </div>
-          <p class="mt-3 text-sm text-white/80">Compassionate support for anxiety, depression, ADHD, stress, and more. Evaluations and care coordination.</p>
-        </div>
-
-        <div class="backdrop-blur bg-white/5 ring-1 ring-white/10 rounded-2xl p-6">
-          <div class="flex items-center gap-3">
-            <div class="flex h-10 w-10 items-center justify-center rounded-xl bg-white/10"><i data-lucide="heart-pulse" class="w-6 h-6"></i></div>
-            <h3 class="text-lg font-semibold">Women’s Health</h3>
-          </div>
-          <p class="mt-3 text-sm text-white/80">Whole‑person gynecologic and reproductive care: well‑woman exams, PAP testing, and menopause support.</p>
+          <p class="mt-3 text-sm text-white/80">Your mental health matters. Our behavioral and mental health services provide evaluation, therapy, and ongoing support for conditions such as depression, anxiety, and stress-related disorders. We are committed to helping you achieve emotional well-being and balance.
+          </p>
         </div>
 
         <div class="backdrop-blur bg-white/5 ring-1 ring-white/10 rounded-2xl p-6">
@@ -103,7 +123,17 @@
             <div class="flex h-10 w-10 items-center justify-center rounded-xl bg-white/10"><i data-lucide="video" class="w-6 h-6"></i></div>
             <h3 class="text-lg font-semibold">Telemedicine</h3>
           </div>
-          <p class="mt-3 text-sm text-white/80">Secure virtual visits from home or on the go for follow‑ups, prescriptions, and same‑day concerns.</p>
+          <p class="mt-3 text-sm text-white/80">We offer secure telemedicine visits, you can connect with your provider virtually from home, work, or on the go. Quick, convenient, and confidential care right at your fingertips.
+          </p>
+        </div>
+
+        <div class="backdrop-blur bg-white/5 ring-1 ring-white/10 rounded-2xl p-6">
+          <div class="flex items-center gap-3">
+            <div class="flex h-10 w-10 items-center justify-center rounded-xl bg-white/10"><i data-lucide="heart-pulse" class="w-6 h-6"></i></div>
+            <h3 class="text-lg font-semibold">Women’s Health</h3>
+          </div>
+          <p class="mt-3 text-sm text-white/80">We provide comprehensive care tailored to women, including annual exams, reproductive health, menopause management, and preventive screenings. Our team prioritizes your comfort and well-being at every stage of life.
+          </p>
         </div>
 
         <div class="backdrop-blur bg-white/5 ring-1 ring-white/10 rounded-2xl p-6">
@@ -111,100 +141,37 @@
             <div class="flex h-10 w-10 items-center justify-center rounded-xl bg-white/10"><i data-lucide="test-tube" class="w-6 h-6"></i></div>
             <h3 class="text-lg font-semibold">Laboratory</h3>
           </div>
-          <p class="mt-3 text-sm text-white/80">On‑site and partner lab testing with fast turnaround: bloodwork, COVID/flu, A1C, lipids, and more.</p>
+          <p class="mt-3 text-sm text-white/80">Our in-house laboratory testing ensures accurate and timely results for a wide range of health needs, including blood work, metabolic panels, and other routine labs. Quick access to lab results allows us to make informed decisions for your care.
+          </p>
         </div>
-      </div>
-    </section>
 
-    <!-- About -->
-    <section id="about" class="mt-24">
-      <div class="grid gap-8 md:grid-cols-1">
-        <div>
-          <h2 class="text-3xl font-semibold">Care that’s down‑to‑earth—yet stellar</h2>
-          <p class="mt-4 text-white/80">At Celestial Health Solutions, we believe great medicine starts with listening. Our team blends clinical expertise with a warm, inclusive approach, meeting you where you are and guiding you toward your healthiest life.</p>
-          <p class="mt-3 text-white/80">We coordinate closely across primary care, wound care, behavioral health, women’s health, and on‑site lab testing—so you get answers faster and care that truly connects.</p>
-          <div class="mt-6 grid gap-3 sm:grid-cols-2">
-            <!-- <div class="p-4 text-sm backdrop-blur bg-white/5 ring-1 ring-white/10 rounded-2xl">
-              <p class="text-white/70">Same‑day & next‑day</p>
-              <p class="mt-1 text-lg font-semibold">Appointments</p>
-            </div> -->
-            <!-- <div class="p-4 text-sm backdrop-blur bg-white/5 ring-1 ring-white/10 rounded-2xl">
-              <p class="text-white/70">Evening hours</p>
-              <p class="mt-1 text-lg font-semibold">Select days</p>
-            </div> -->
+        <div class="backdrop-blur bg-white/5 ring-1 ring-white/10 rounded-2xl p-6">
+          <div class="flex items-center gap-3">
+            <div class="flex h-10 w-10 items-center justify-center rounded-xl bg-white/10"><i data-lucide="computer" class="w-6 h-6"></i></div>
+            <h3 class="text-lg font-semibold">Diagnositc Testing</h3>
           </div>
-        </div>
-        <div class="p-6 backdrop-blur bg-white/5 ring-1 ring-white/10 rounded-2xl">
-          <h3 class="text-xl font-semibold">Our Providers</h3>
-          <p class="mt-2 text-white/80 text-sm">Swap in your real team bios and credentials here. Use friendly, human language that highlights experience and philosophy of care.</p>
-          <div class="mt-4 grid gap-4 sm:grid-cols-2">
-            <div class="rounded-2xl border border-white/10 bg-white/5 p-4">
-              <p class="font-semibold">Roy Margallo, MD</p>
-              <p class="text-sm text-white/70">Primary Care/Wound Care</p>
-            </div>
-            <div class="rounded-2xl border border-white/10 bg-white/5 p-4">
-              <p class="font-semibold">John Valles, MD</p>
-              <p class="text-sm text-white/70">Behavioral and Mental Health</p>
-            </div>
-            <div class="rounded-2xl border border-white/10 bg-white/5 p-4">
-              <p class="font-semibold">Kurt Ricardo, APRN, PMHNP-BC</p>
-              <p class="text-sm text-white/70">Behavioral and Mental Health</p>
-            </div>
-            <div class="rounded-2xl border border-white/10 bg-white/5 p-4">
-              <p class="font-semibold">Mark Quim, APRN, PMHNP-BC</p>
-              <p class="text-sm text-white/70">Behavioral and Mental Health</p>
-            </div>
-            <div class="rounded-2xl border border-white/10 bg-white/5 p-4">
-              <p class="font-semibold">Michelle Lobrin, APRN, PMHNP-BC</p>
-              <p class="text-sm text-white/70">Behavioral and Mental Health</p>
-            </div>
-            <div class="rounded-2xl border border-white/10 bg-white/5 p-4">
-              <p class="font-semibold">Karen Corregidor, APRN, FNP-C</p>
-              <p class="text-sm text-white/70">Primary Care</p>
-            </div>
-            <div class="rounded-2xl border border-white/10 bg-white/5 p-4">
-              <p class="font-semibold">Sarah Quirante, APRN, FNP-C</p>
-              <p class="text-sm text-white/70">Primary Care/Wound Care/Women’s Health</p>
-            </div>
-            <div class="rounded-2xl border border-white/10 bg-white/5 p-4">
-              <p class="font-semibold">Joan Achondo, APRN, FNP-C</p>
-              <p class="text-sm text-white/70">Primary Care</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Insurance & Labs -->
-    <section id="insurance" class="mt-24">
-      <div class="grid gap-8 lg:grid-cols-2">
-        <div class="p-6 backdrop-blur bg-white/5 ring-1 ring-white/10 rounded-2xl">
-          <h2 class="text-2xl font-semibold">Insurance & Billing</h2>
-          <p class="mt-2 text-sm text-white/80">We accept most major insurance plans and offer straightforward self‑pay options. Our team will verify benefits and provide an estimate before your visit.</p>
-          <ul class="mt-4 grid gap-2 text-sm text-white/80 sm:grid-cols-2">
-            <li>• Aetna</li>
-            <li>• Blue Cross/Blue Shield</li>
-            <li>• Cigna</li>
-            <li>• Medicare/Medicaid</li>
-            <li>• UnitedHealthcare</li>
-            <li>• Sierra Health and life</li>
-            <li>• VA/Tricare</li>
-            <li>• Self‑pay</li>
-            <li>• Optum</li>
-            <li>• Deptartment of Labor</li>
+          <p class="mt-3 text-sm text-white/80">We offer essential diagnostic tests to help identify and monitor health conditions:
+          </p>
+          <ul style="list-style: disc; margin-left: 20px; margin-right: 20px;">
+            <li>EKGs (Electrocardiograms): Evaluate heart rhythm and detect heart conditions</li>
+            <li>PFTs (Pulmonary Function Tests): Assess lung function and respiratory health</li>
+            <li>ABIs (Ankle-Brachial Tests): Assess blood flow in legs and detect peripheral artery disease</li>
+            <li>Other diagnostic screenings as needed to support comprehensive care</li>
           </ul>
         </div>
-        <div class="p-6 backdrop-blur bg-white/5 ring-1 ring-white/10 rounded-2xl">
-          <h2 class="text-2xl font-semibold flex items-center gap-2"><i data-lucide="flask-conical" class="w-6 h-6"></i> On‑Site Laboratory</h2>
-          <p class="mt-2 text-sm text-white/80">Convenient testing with rapid turnaround—ordered directly by your provider and reviewed with you in plain language.</p>
-          <div class="mt-4 grid gap-3 sm:grid-cols-2">
-            <div class="rounded-xl border border-white/10 bg-white/5 p-3 text-sm text-white/80">Complete blood count (CBC)</div>
-            <div class="rounded-xl border border-white/10 bg-white/5 p-3 text-sm text-white/80">Metabolic & lipid panels</div>
-            <div class="rounded-xl border border-white/10 bg-white/5 p-3 text-sm text-white/80">A1C & glucose</div>
-            <div class="rounded-xl border border-white/10 bg-white/5 p-3 text-sm text-white/80">Urinalysis</div>
-            <div class="rounded-xl border border-white/10 bg-white/5 p-3 text-sm text-white/80">Toxicology</div>
-            <div class="rounded-xl border border-white/10 bg-white/5 p-3 text-sm text-white/80">Pregnancy tests</div>
+
+        <div class="backdrop-blur bg-white/5 ring-1 ring-white/10 rounded-2xl p-6">
+          <div class="flex items-center gap-3">
+            <div class="flex h-10 w-10 items-center justify-center rounded-xl bg-white/10"><i data-lucide="badge-question-mark" class="w-6 h-6"></i></div>
+            <h3 class="text-lg font-semibold">Why Choose Celestial Health Solutions</h3>
           </div>
+          </p>
+          <ul style="list-style: disc; margin-top: 15px; margin-left: 20px; margin-right: 20px;">
+            <li>Comprehensive, patient-centered care under one roof</li>
+            <li>Experienced and compassionate providers</li>
+            <li>Advanced technology for diagnosis and treatment</li>
+            <li>Personalized care plans tailored to your unique needs</li>
+          </ul>
         </div>
       </div>
     </section>
@@ -218,7 +185,7 @@
             <p class="mt-2 text-white/80 text-sm">Have a question or ready to book? Send us a message and our care team will follow up promptly.</p>
             <div class="mt-6 space-y-3 text-white/80">
               <p class="flex items-center gap-2"><i data-lucide="phone" class="w-4 h-4"></i> <a class="hover:text-white" href="tel:+17025001728">702-500-1728</a></p>
-              <p class="flex items-center gap-2"><i data-lucide="mail" class="w-4 h-4"></i> <a class="hover:text-white" href="mailto:care@celestialhealth.example">care@celestialhealth.example</a></p>
+              <p class="flex items-center gap-2"><i data-lucide="mail" class="w-4 h-4"></i> <a class="hover:text-white" href="mailto:care@celestialhealth.example">info@celestial.sprucecare.com</a></p>
               <p class="flex items-start gap-2"><i data-lucide="map-pin" class="w-4 h-4 mt-0.5"></i> 2255 E. Renaissance Dr. Ste B<br />Las Vegas NV 89119</p>
             </div>
           </div>
@@ -256,7 +223,7 @@
             <div class="flex items-center justify-between">
               <p class="text-xs text-white/60">By submitting, you agree to our Terms & Privacy Policy.</p>
               <button class="inline-flex items-center gap-2 rounded-xl bg-gradient-to-r from-sky-900 via-blue-900 to-indigo-900 px-4 py-2 font-semibold hover:bg-blue-900">
-                <i data-lucide="send" class="w-4 h-4"></i> Send Request
+                <i data-lucide="send" class="w-4 h-4"></i> Submit
               </button>
             </div>
           </form>
