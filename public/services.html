@@ -1,0 +1,339 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Celestial Health Solutions</title>
+  <!-- Tailwind JIT CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <style>
+    /* Starfield & Twinkle */
+    @keyframes twinkle { 0% { opacity: .1; transform: translateY(0) scale(1)} 50% { opacity: .6; transform: translateY(-20px) scale(1.1)} 100% { opacity: .1; transform: translateY(0) scale(1)} }
+    .star { position:absolute; width:4px; height:4px; border-radius:9999px; background:#60a5fa; box-shadow:0 0 8px rgba(96,165,250,.9); }
+    .fade-in { animation: fadeInUp .8s ease both; }
+    @keyframes fadeInUp { from { opacity:0; transform: translateY(12px);} to { opacity:1; transform: translateY(0);} }
+  </style>
+</head>
+<body class="min-h-screen bg-gradient-to-b from-gray-950 via-gray-900 to-black text-white font-sans relative selection:bg-blue-500/30 selection:text-blue-100">
+  <!-- Nebula gradients -->
+  <div aria-hidden class="pointer-events-none fixed inset-0 -z-20 overflow-hidden">
+    <div class="absolute -top-40 -left-40 h-[48rem] w-[48rem] rounded-full blur-3xl opacity-25 bg-gradient-to-br from-blue-700 via-indigo-800 to-sky-700"></div>
+    <div class="absolute -bottom-56 -right-40 h-[46rem] w-[46rem] rounded-full blur-3xl opacity-20 bg-gradient-to-tr from-sky-600 via-blue-700 to-indigo-900"></div>
+    <div class="absolute inset-0 opacity-20 bg-[radial-gradient(#ffffff_1px,transparent_1px)] [background-size:6px_6px]"></div>
+    <div class="absolute inset-0 opacity-15 bg-[radial-gradient(#93c5fd_1px,transparent_1px)] [background-size:10px_10px]"></div>
+  </div>
+  <!-- Dynamic stars container -->
+  <div id="stars" class="absolute inset-0 -z-10"></div>
+
+  <!-- Navbar -->
+  <nav class="sticky top-0 z-50 backdrop-blur supports-[backdrop-filter]:bg-black/40 border-b border-blue-900/60">
+    <div class="max-w-7xl mx-auto flex items-center justify-between px-4 md:px-6 py-3">
+      <a href="#home" class="flex items-center gap-3">
+        <span class="inline-flex h-9 w-9 items-center justify-center rounded-xl bg-gradient-to-br from-sky-900 via-blue-900 to-indigo-900 shadow-lg shadow-blue-900/30">
+          <i data-lucide="stethoscope" class="w-5 h-5"></i>
+        </span>
+        <div class="leading-tight">
+          <p class="text-sm uppercase tracking-widest text-blue-300/90">Celestial</p>
+          <p class="text-lg font-semibold -mt-1">Health Solutions</p>
+        </div>
+      </a>
+      <div class="hidden md:flex items-center gap-6 text-sm">
+        <a href="#services" class="text-white/80 hover:text-white">Services</a>
+        <a href="#telemedicine" class="text-white/80 hover:text-white">TMS</a>
+        <a href="#about" class="text-white/80 hover:text-white">About</a>
+        <a href="#insurance" class="text-white/80 hover:text-white">Insurance</a>
+        <a href="#contact" class="text-white/80 hover:text-white">Contact</a>
+      </div>
+      <a href="#contact" class="inline-flex items-center gap-2 rounded-xl bg-gradient-to-r from-sky-900 via-blue-900 to-indigo-900 px-4 py-2 text-sm font-semibold shadow-lg shadow-blue-900/30">Book</a>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <main id="home" class="mx-auto max-w-7xl px-4 md:px-6">
+    <section class="pt-20 md:pt-28">
+      <div class="fade-in flex justify-center">
+        <img src="assets/chsSilverNoBG.png" alt="logo for CHS" style="filter: brightness(1.3); border-radius: 8px;">
+      </div>
+    </section>
+
+    <!-- Services -->
+    <section id="services" class="mt-24">
+      <div class="mx-auto max-w-3xl text-center">
+        <h2 class="text-3xl font-semibold">Services</h2>
+        <p class="mt-3 text-white/80">One constellation of care—connected services designed to keep you well.</p>
+      </div>
+      <div class="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+        <!-- Service cards -->
+        <div class="backdrop-blur bg-white/5 ring-1 ring-white/10 rounded-2xl p-6">
+          <div class="flex items-center gap-3">
+            <div class="flex h-10 w-10 items-center justify-center rounded-xl bg-white/10"><i data-lucide="stethoscope" class="w-6 h-6"></i></div>
+            <h3 class="text-lg font-semibold">Primary Care</h3>
+          </div>
+          <p class="mt-3 text-sm text-white/80">Comprehensive, relationship‑based care, annual physicals, chronic condition management, preventive screenings.</p>
+        </div>
+
+        <div class="backdrop-blur bg-white/5 ring-1 ring-white/10 rounded-2xl p-6">
+          <div class="flex items-center gap-3">
+            <div class="flex h-10 w-10 items-center justify-center rounded-xl bg-white/10"><i data-lucide="bandage" class="w-6 h-6"></i></div>
+            <h3 class="text-lg font-semibold">Wound Care</h3>
+          </div>
+          <p class="mt-3 text-sm text-white/80">Advanced, evidence‑based wound management including debridement, dressings, infection control, and diabetic foot care.</p>
+        </div>
+
+        <div class="backdrop-blur bg-white/5 ring-1 ring-white/10 rounded-2xl p-6">
+          <div class="flex items-center gap-3">
+            <div class="flex h-10 w-10 items-center justify-center rounded-xl bg-white/10"><i data-lucide="brain" class="w-6 h-6"></i></div>
+            <h3 class="text-lg font-semibold">Behavioral & Mental Health</h3>
+          </div>
+          <p class="mt-3 text-sm text-white/80">Compassionate support for anxiety, depression, ADHD, stress, and more. Evaluations and care coordination.</p>
+        </div>
+
+        <div class="backdrop-blur bg-white/5 ring-1 ring-white/10 rounded-2xl p-6">
+          <div class="flex items-center gap-3">
+            <div class="flex h-10 w-10 items-center justify-center rounded-xl bg-white/10"><i data-lucide="heart-pulse" class="w-6 h-6"></i></div>
+            <h3 class="text-lg font-semibold">Women’s Health</h3>
+          </div>
+          <p class="mt-3 text-sm text-white/80">Whole‑person gynecologic and reproductive care: well‑woman exams, PAP testing, and menopause support.</p>
+        </div>
+
+        <div class="backdrop-blur bg-white/5 ring-1 ring-white/10 rounded-2xl p-6">
+          <div class="flex items-center gap-3">
+            <div class="flex h-10 w-10 items-center justify-center rounded-xl bg-white/10"><i data-lucide="video" class="w-6 h-6"></i></div>
+            <h3 class="text-lg font-semibold">Telemedicine</h3>
+          </div>
+          <p class="mt-3 text-sm text-white/80">Secure virtual visits from home or on the go for follow‑ups, prescriptions, and same‑day concerns.</p>
+        </div>
+
+        <div class="backdrop-blur bg-white/5 ring-1 ring-white/10 rounded-2xl p-6">
+          <div class="flex items-center gap-3">
+            <div class="flex h-10 w-10 items-center justify-center rounded-xl bg-white/10"><i data-lucide="test-tube" class="w-6 h-6"></i></div>
+            <h3 class="text-lg font-semibold">Laboratory</h3>
+          </div>
+          <p class="mt-3 text-sm text-white/80">On‑site and partner lab testing with fast turnaround: bloodwork, COVID/flu, A1C, lipids, and more.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- About -->
+    <section id="about" class="mt-24">
+      <div class="grid gap-8 md:grid-cols-1">
+        <div>
+          <h2 class="text-3xl font-semibold">Care that’s down‑to‑earth—yet stellar</h2>
+          <p class="mt-4 text-white/80">At Celestial Health Solutions, we believe great medicine starts with listening. Our team blends clinical expertise with a warm, inclusive approach, meeting you where you are and guiding you toward your healthiest life.</p>
+          <p class="mt-3 text-white/80">We coordinate closely across primary care, wound care, behavioral health, women’s health, and on‑site lab testing—so you get answers faster and care that truly connects.</p>
+          <div class="mt-6 grid gap-3 sm:grid-cols-2">
+            <!-- <div class="p-4 text-sm backdrop-blur bg-white/5 ring-1 ring-white/10 rounded-2xl">
+              <p class="text-white/70">Same‑day & next‑day</p>
+              <p class="mt-1 text-lg font-semibold">Appointments</p>
+            </div> -->
+            <!-- <div class="p-4 text-sm backdrop-blur bg-white/5 ring-1 ring-white/10 rounded-2xl">
+              <p class="text-white/70">Evening hours</p>
+              <p class="mt-1 text-lg font-semibold">Select days</p>
+            </div> -->
+          </div>
+        </div>
+        <div class="p-6 backdrop-blur bg-white/5 ring-1 ring-white/10 rounded-2xl">
+          <h3 class="text-xl font-semibold">Our Providers</h3>
+          <p class="mt-2 text-white/80 text-sm">Swap in your real team bios and credentials here. Use friendly, human language that highlights experience and philosophy of care.</p>
+          <div class="mt-4 grid gap-4 sm:grid-cols-2">
+            <div class="rounded-2xl border border-white/10 bg-white/5 p-4">
+              <p class="font-semibold">Roy Margallo, MD</p>
+              <p class="text-sm text-white/70">Primary Care/Wound Care</p>
+            </div>
+            <div class="rounded-2xl border border-white/10 bg-white/5 p-4">
+              <p class="font-semibold">John Valles, MD</p>
+              <p class="text-sm text-white/70">Behavioral and Mental Health</p>
+            </div>
+            <div class="rounded-2xl border border-white/10 bg-white/5 p-4">
+              <p class="font-semibold">Kurt Ricardo, APRN, PMHNP-BC</p>
+              <p class="text-sm text-white/70">Behavioral and Mental Health</p>
+            </div>
+            <div class="rounded-2xl border border-white/10 bg-white/5 p-4">
+              <p class="font-semibold">Mark Quim, APRN, PMHNP-BC</p>
+              <p class="text-sm text-white/70">Behavioral and Mental Health</p>
+            </div>
+            <div class="rounded-2xl border border-white/10 bg-white/5 p-4">
+              <p class="font-semibold">Michelle Lobrin, APRN, PMHNP-BC</p>
+              <p class="text-sm text-white/70">Behavioral and Mental Health</p>
+            </div>
+            <div class="rounded-2xl border border-white/10 bg-white/5 p-4">
+              <p class="font-semibold">Karen Corregidor, APRN, FNP-C</p>
+              <p class="text-sm text-white/70">Primary Care</p>
+            </div>
+            <div class="rounded-2xl border border-white/10 bg-white/5 p-4">
+              <p class="font-semibold">Sarah Quirante, APRN, FNP-C</p>
+              <p class="text-sm text-white/70">Primary Care/Wound Care/Women’s Health</p>
+            </div>
+            <div class="rounded-2xl border border-white/10 bg-white/5 p-4">
+              <p class="font-semibold">Joan Achondo, APRN, FNP-C</p>
+              <p class="text-sm text-white/70">Primary Care</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Insurance & Labs -->
+    <section id="insurance" class="mt-24">
+      <div class="grid gap-8 lg:grid-cols-2">
+        <div class="p-6 backdrop-blur bg-white/5 ring-1 ring-white/10 rounded-2xl">
+          <h2 class="text-2xl font-semibold">Insurance & Billing</h2>
+          <p class="mt-2 text-sm text-white/80">We accept most major insurance plans and offer straightforward self‑pay options. Our team will verify benefits and provide an estimate before your visit.</p>
+          <ul class="mt-4 grid gap-2 text-sm text-white/80 sm:grid-cols-2">
+            <li>• Aetna</li>
+            <li>• Blue Cross/Blue Shield</li>
+            <li>• Cigna</li>
+            <li>• Medicare/Medicaid</li>
+            <li>• UnitedHealthcare</li>
+            <li>• Sierra Health and life</li>
+            <li>• VA/Tricare</li>
+            <li>• Self‑pay</li>
+            <li>• Optum</li>
+            <li>• Deptartment of Labor</li>
+          </ul>
+        </div>
+        <div class="p-6 backdrop-blur bg-white/5 ring-1 ring-white/10 rounded-2xl">
+          <h2 class="text-2xl font-semibold flex items-center gap-2"><i data-lucide="flask-conical" class="w-6 h-6"></i> On‑Site Laboratory</h2>
+          <p class="mt-2 text-sm text-white/80">Convenient testing with rapid turnaround—ordered directly by your provider and reviewed with you in plain language.</p>
+          <div class="mt-4 grid gap-3 sm:grid-cols-2">
+            <div class="rounded-xl border border-white/10 bg-white/5 p-3 text-sm text-white/80">Complete blood count (CBC)</div>
+            <div class="rounded-xl border border-white/10 bg-white/5 p-3 text-sm text-white/80">Metabolic & lipid panels</div>
+            <div class="rounded-xl border border-white/10 bg-white/5 p-3 text-sm text-white/80">A1C & glucose</div>
+            <div class="rounded-xl border border-white/10 bg-white/5 p-3 text-sm text-white/80">Urinalysis</div>
+            <div class="rounded-xl border border-white/10 bg-white/5 p-3 text-sm text-white/80">Toxicology</div>
+            <div class="rounded-xl border border-white/10 bg-white/5 p-3 text-sm text-white/80">Pregnancy tests</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" class="mt-24 mb-24">
+      <div class="p-8 backdrop-blur bg-white/5 ring-1 ring-white/10 rounded-2xl">
+        <div class="grid gap-8 md:grid-cols-2">
+          <div>
+            <h2 class="text-2xl font-semibold">Get in touch</h2>
+            <p class="mt-2 text-white/80 text-sm">Have a question or ready to book? Send us a message and our care team will follow up promptly.</p>
+            <div class="mt-6 space-y-3 text-white/80">
+              <p class="flex items-center gap-2"><i data-lucide="phone" class="w-4 h-4"></i> <a class="hover:text-white" href="tel:+17025001728">702-500-1728</a></p>
+              <p class="flex items-center gap-2"><i data-lucide="mail" class="w-4 h-4"></i> <a class="hover:text-white" href="mailto:care@celestialhealth.example">care@celestialhealth.example</a></p>
+              <p class="flex items-start gap-2"><i data-lucide="map-pin" class="w-4 h-4 mt-0.5"></i> 2255 E. Renaissance Dr. Ste B<br />Las Vegas NV 89119</p>
+            </div>
+          </div>
+
+          <form class="space-y-4" onsubmit="event.preventDefault()" aria-label="Contact form">
+            <div class="grid gap-4 sm:grid-cols-2">
+              <div>
+                <label class="mb-1 block text-sm text-white/80" for="name">Full name</label>
+                <input id="name" class="w-full rounded-xl border border-white/15 bg-white/5 px-3 py-2 outline-none placeholder:text-white/40 focus:ring-2 focus:ring-blue-500" placeholder="Jane Doe" />
+              </div>
+              <div>
+                <label class="mb-1 block text-sm text-white/80" for="phone">Phone</label>
+                <input id="phone" class="w-full rounded-xl border border-white/15 bg-white/5 px-3 py-2 outline-none placeholder:text-white/40 focus:ring-2 focus:ring-blue-500" placeholder="(555) 555‑1234" />
+              </div>
+            </div>
+            <div>
+              <label class="mb-1 block text-sm text-white/80" for="email">Email</label>
+              <input id="email" type="email" class="w-full rounded-xl border border-white/15 bg-white/5 px-3 py-2 outline-none placeholder:text-white/40 focus:ring-2 focus:ring-blue-500" placeholder="you@example.com" />
+            </div>
+            <div>
+              <label class="mb-1 block text-sm text-white/80" for="service">Service</label>
+              <select id="service" class="w-full rounded-xl border border-white/15 bg-white/5 px-3 py-2 outline-none focus:ring-2 focus:ring-blue-500">
+                <option>Primary Care</option>
+                <option>Wound Care</option>
+                <option>Behavioral & Mental Health</option>
+                <option>Women’s Health</option>
+                <option>Telemedicine</option>
+                <option>Laboratory</option>
+              </select>
+            </div>
+            <div>
+              <label class="mb-1 block text-sm text-white/80" for="message">Message</label>
+              <textarea id="message" rows="4" class="w-full rounded-xl border border-white/15 bg-white/5 px-3 py-2 outline-none placeholder:text-white/40 focus:ring-2 focus:ring-blue-500" placeholder="How can we help?"></textarea>
+            </div>
+            <div class="flex items-center justify-between">
+              <p class="text-xs text-white/60">By submitting, you agree to our Terms & Privacy Policy.</p>
+              <button class="inline-flex items-center gap-2 rounded-xl bg-gradient-to-r from-sky-900 via-blue-900 to-indigo-900 px-4 py-2 font-semibold hover:bg-blue-900">
+                <i data-lucide="send" class="w-4 h-4"></i> Send Request
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="border-t border-white/10 bg-black/40">
+    <div class="mx-auto max-w-7xl px-4 md:px-6 py-10">
+      <div class="grid gap-8 sm:grid-cols-2 md:grid-cols-4">
+        <div>
+          <p class="text-lg font-semibold">Celestial Health Solutions</p>
+          <p class="mt-2 text-sm text-white/70">Care that’s as dependable as the North Star.</p>
+        </div>
+        <div>
+          <p class="font-semibold">Services</p>
+          <ul class="mt-2 space-y-1 text-sm text-white/80">
+            <li><a href="#services" class="hover:text-white">Primary Care</a></li>
+            <li><a href="#services" class="hover:text-white">Wound Care</a></li>
+            <li><a href="#services" class="hover:text-white">Behavioral & Mental Health</a></li>
+            <li><a href="#services" class="hover:text-white">Women’s Health</a></li>
+            <li><a href="#services" class="hover:text-white">Telemedicine</a></li>
+            <li><a href="#services" class="hover:text-white">Laboratory</a></li>
+          </ul>
+        </div>
+        <div>
+          <p class="font-semibold">Contact</p>
+          <ul class="mt-2 space-y-1 text-sm text-white/80">
+            <li class="flex items-center gap-2"><i data-lucide="phone" class="w-4 h-4"></i><a href="tel:+17025001728" class="hover:text-white">702-500-1728</a>(Phone)</li>
+            <li class="flex items-center gap-2"><i data-lucide="phone" class="w-4 h-4"></i><a href="tel:+17023563102" class="hover:text-white">702-356-3102</a>(Fax)</li>
+            <li class="flex items-center gap-2"><i data-lucide="mail" class="w-4 h-4"></i><a href="mailto:care@celestialhealth.example" class="hover:text-white">care@celestialhealth@example</a></li>
+            <li class="flex items-start gap-2"><i data-lucide="map-pin" class="w-4 h-4 mt-0.5"></i> 2255 E. Renaissance Dr. Ste B<br>Las Vegas NV 89119</li>
+          </ul>
+        </div>
+        <div>
+          <p class="font-semibold">Hours</p>
+          <ul class="mt-2 space-y-1 text-sm text-white/80">
+            <li>Mon–Fri: 9:00a – 5:00p</li>
+            <li>Weekends: Closed</li>
+            <li>Holidays: Closed</li>
+          </ul>
+        </div>
+      </div>
+      <div class="mt-8 flex flex-wrap items-center justify-between gap-4 border-t border-white/10 pt-6 text-xs text-white/60">
+        <p>© <span id="year"></span> Celestial Health Solutions. All rights reserved.</p>
+        <div class="space-x-4">
+          <a href="#" class="hover:text-white">Privacy</a>
+          <a href="#" class="hover:text-white">Terms</a>
+          <a href="#" class="hover:text-white">Accessibility</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Replace Lucide placeholders with SVGs
+    lucide.createIcons();
+
+    // Create randomized twinkling stars
+    (function createStars() {
+      const container = document.getElementById('stars');
+      const STAR_COUNT = 60;
+      for (let i = 0; i < STAR_COUNT; i++) {
+        const s = document.createElement('div');
+        s.className = 'star';
+        s.style.top = Math.random() * 100 + '%';
+        s.style.left = Math.random() * 100 + '%';
+        const d = 3 + Math.random() * 4; // 3s – 7s
+        s.style.animation = `twinkle ${d}s ease-in-out ${Math.random()*5}s infinite`;
+        container.appendChild(s);
+      }
+    })();
+
+    // Year in footer
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>

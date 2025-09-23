@@ -1,0 +1,100 @@
+@import url('https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css');
+
+body { font-family: 'Inter', sans-serif; }
+.star {
+  position: absolute;
+  width: 4px;
+  height: 4px;
+  background: #3b82f6;
+  border-radius: 9999px;
+  opacity: 0;
+  animation: twinkle 6s infinite;
+}
+@keyframes twinkle {
+  0%, 100% { opacity: 0; transform: translateY(0); }
+  50% { opacity: 1; transform: translateY(-20px); }
+}
+.card {
+  @apply bg-gray-900/60 backdrop-blur border border-blue-900 rounded-2xl shadow-lg p-6 text-center;
+}
+.card-title {
+  @apply text-xl font-semibold text-blue-300;
+}
+.card-text {
+  @apply text-gray-400 text-sm;
+}
+.icon {
+  @apply text-blue-400 mb-4;
+}
+.form {
+  @apply grid md:grid-cols-2 gap-6 bg-gray-900/60 backdrop-blur p-8 rounded-2xl border border-blue-900 shadow-lg;
+}
+.input, .textarea {
+  @apply p-3 rounded-lg bg-black/40 border border-blue-800 focus:outline-none focus:ring-2 focus:ring-blue-500;
+}
+.textarea {
+  @apply md:col-span-2;
+}
+.btn {
+  @apply bg-blue-600 hover:bg-blue-500 text-white px-6 py-3 rounded-xl md:col-span-2;
+}
+/* Hamburger button */
+.menu-btn {
+  position: fixed;
+  top: 1rem;
+  right: 1rem;
+  z-index: 1001;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.menu-btn svg {
+  width: 32px;
+  height: 32px;
+  stroke: white;
+}
+
+/* Overlay menu */
+.menu-overlay {
+  padding-top: 22px;
+  position: absolute;
+  z-index: 1;
+  background-color: #00002b;
+  width: 100%;
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  height: 100%;
+  font-size: 30px;
+  transform: translateY(-100%);
+  transition: transform 0.3s ease-in-out;
+  z-index: 1000;
+}
+
+.menu-overlay.active {
+  transform: translateY(0);
+  display: flex;
+}
+
+.menu-overlay ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  text-align: center;
+}
+
+.menu-overlay li {
+  margin: 1rem 0;
+}
+
+.menu-overlay a {
+  text-decoration: none;
+  color: white;
+  font-size: 2rem;
+  transition: color 0.2s;
+}
+
+.menu-overlay a:hover {
+  color: #ff6f61;
+}
