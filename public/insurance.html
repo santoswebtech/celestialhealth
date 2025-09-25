@@ -1,0 +1,260 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Celestial Health Solutions</title>
+  <!-- Tailwind JIT CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    /* Starfield & Twinkle */
+    @keyframes twinkle { 0% { opacity: .1; transform: translateY(0) scale(1)} 50% { opacity: .6; transform: translateY(-20px) scale(1.1)} 100% { opacity: .1; transform: translateY(0) scale(1)} }
+    .star { position:absolute; width:4px; height:4px; border-radius:9999px; background:#60a5fa; box-shadow:0 0 8px rgba(96,165,250,.9); }
+    .fade-in { animation: fadeInUp .8s ease both; }
+    @keyframes fadeInUp { from { opacity:0; transform: translateY(12px);} to { opacity:1; transform: translateY(0);} }
+  </style>
+</head>
+<body class="min-h-screen bg-gradient-to-b from-gray-950 via-gray-900 to-black text-white font-sans relative selection:bg-blue-500/30 selection:text-blue-100">
+  <!-- Nebula gradients -->
+  <div aria-hidden class="pointer-events-none fixed inset-0 -z-20 overflow-hidden">
+    <div class="absolute -top-40 -left-40 h-[48rem] w-[48rem] rounded-full blur-3xl opacity-25 bg-gradient-to-br from-blue-700 via-indigo-800 to-sky-700"></div>
+    <div class="absolute -bottom-56 -right-40 h-[46rem] w-[46rem] rounded-full blur-3xl opacity-20 bg-gradient-to-tr from-sky-600 via-blue-700 to-indigo-900"></div>
+    <div class="absolute inset-0 opacity-20 bg-[radial-gradient(#ffffff_1px,transparent_1px)] [background-size:6px_6px]"></div>
+    <div class="absolute inset-0 opacity-15 bg-[radial-gradient(#93c5fd_1px,transparent_1px)] [background-size:10px_10px]"></div>
+  </div>
+  <!-- Dynamic stars container -->
+  <div id="stars" class="absolute inset-0 -z-10"></div>
+
+  <!-- Navbar -->
+  <nav class="sticky top-0 z-50 backdrop-blur supports-[backdrop-filter]:bg-black/40 border-b border-blue-900/60">
+    <div class="max-w-7xl mx-auto flex items-center justify-between px-4 md:px-6 py-3">
+      <a href="./index.html" class="flex items-center gap-3">
+        <span class="inline-flex h-9 w-9 items-center justify-center rounded-xl bg-gradient-to-br from-sky-900 via-blue-900 to-indigo-900 shadow-lg shadow-blue-900/30">
+          <i data-lucide="stethoscope" class="w-5 h-5"></i>
+        </span>
+        <div class="leading-tight">
+          <p class="text-sm uppercase tracking-widest text-blue-300/90">Celestial</p>
+          <p class="text-lg font-semibold -mt-1">Health Solutions</p>
+        </div>
+      </a>
+      <div class="hidden md:flex items-center gap-6 text-sm">
+        <a href="./services.html" class="text-white/80 hover:text-white">Services</a>
+        <a href="#telemedicine" class="text-white/80 hover:text-white">TMS</a>
+        <a href="#about" class="text-white/80 hover:text-white">About</a>
+        <a href="#insurance" class="text-white/80 hover:text-white">Insurance</a>
+        <a href="#contact" class="text-white/80 hover:text-white">Contact</a>
+      </div>
+      <button class="menu-btn md:hidden" id="menu-btn" aria-label="Toggle menu">
+        <i data-lucide="menu"></i>
+      </button>
+      <!-- <a href="#contact" class="inline-flex items-center gap-2 rounded-xl bg-gradient-to-r from-sky-900 via-blue-900 to-indigo-900 px-4 py-2 text-sm font-semibold shadow-lg shadow-blue-900/30">Book</a> -->
+    </div>
+  </nav>
+  <nav class="menu-overlay" id="menu-overlay">
+    <ul>
+      <li><a href="./index.html">Home</a></li>
+      <li><a href="#">About</a></li>
+      <li><a href="./services.html">Services</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <script>
+    lucide.createIcons();
+
+    const menuBtn = document.getElementById("menu-btn");
+    const menuOverlay = document.getElementById("menu-overlay");
+    let isOpen = false;
+
+    menuBtn.addEventListener("click", () => {
+      isOpen = !isOpen;
+      menuOverlay.classList.toggle("active", isOpen);
+      menuBtn.innerHTML = isOpen
+        ? '<i data-lucide="x"></i>'
+        : '<i data-lucide="menu"></i>';
+      lucide.createIcons();
+    });
+  </script>
+
+  <!-- Hero -->
+  <main id="home" class="mx-auto max-w-7xl px-4 md:px-6">
+
+    <!-- About -->
+    <section id="insurance" class="mt-24">
+      <div class="mx-auto max-w-3xl text-center">
+        <h1 class="text-5xl font-semibold">Insurance</h1>
+        <p class="mt-3 text-white/80">At Celestial Health Solutions, we make healthcare accessible and affordable for all patients. We accept a wide range of insurance plans to help you receive the care you need with ease.</p>
+      </div>
+      <div class="mt-24 grid gap-8 md:grid-cols-1">
+        <div>
+          <h2 class="text-3xl font-semibold">Insurance Providers We Accept</h2>
+          <p class="mt-4 text-white/80">At Celestial Health Solutions, we believe great medicine starts with listening. Our team blends clinical expertise with a warm, inclusive approach, meeting you where you are and guiding you toward your healthiest life.</p>
+          <p class="mt-3 text-white/80">We coordinate closely across primary care, wound care, behavioral health, women’s health, and on‑site lab testing—so you get answers faster and care that truly connects.</p>
+          <br>
+          <br>
+          <p>As a non-profit organization, we focus on patient-centered care, accessibility, and community wellness, ensuring that every individual receives the attention and support they deserve, regardless of their background or circumstances.</p>
+        </div>
+      </div>
+      <div class="mt-24 grid gap-4 sm:grid-cols-4">
+        <img src="assets/aetnaLogo.jpg" alt="Aetna" style="height: 180px; width: 300px; border-radius: 5px;">
+        <img src="assets/bluecrossLogo.png" alt="Blue Cross Blue Shield" style="height: 180px; width: 300px; background-color: white; border-radius: 5px;">
+        <img src="assets/cignaLogo.png" alt="Cigna" style="height: 180px; width: 300px; background-color: white; border-radius: 5px;">
+        <img src="assets/medicareLogo.png" alt="Medicare" style="height: 180px; width: 300px; background-color: white; border-radius: 5px;">
+        <img src="assets/medicaidLogo.jpg" alt="Medicaid" style="height: 180px; width: 300px; border-radius: 5px;">
+        <img src="assets/optumLogo.png" alt="Optum" style="height: 180px; width: 300px; border-radius: 5px;">
+        <img src="assets/sierraHealthLogo.png" alt="Sierra Healthcare" style="height: 180px; width: 300px; background-color: white; border-radius: 5px;">
+        <img src="assets/unitedHealthLogo.png" alt="United Healthcare" style="height: 180px; width: 300px; border-radius: 5px;">
+        <img src="assets/tricareLogo.jpg" alt="Tricare" style="height: 180px; width: 300px; border-radius: 5px;">
+        <img src="assets/dolLogo.png" alt="Dept of Labor" style="height: 180px; width: 180px; border-radius: 5px; margin: 0 auto;">
+        <div class="flex flex-col items-center">
+          <img src="assets/payIcon.png" alt="self-pay" style="height: 90; width: 100px; border-radius: 5px; background-color: white; margin: auto;">
+          <div>Self Pay</div>
+        </div>
+      </div>
+    </section>
+
+    <div class="mt-24 flex flex-col items-center">
+      <h2 class="text-3xl font-semibold">Why Choose Celestial Health Solutions?</h2>
+      <ul style="list-style: disc; margin-top: 15px; margin-left: 20px; margin-right: 20px;">
+        <li>Comprehensive, patient-centered care under one roof</li>
+        <li>Experienced and compassionate providers</li>
+        <li>Advanced technology for diagnosis and treatment</li>
+        <li>Personalized care plans tailored to your unique needs</li>
+      </ul>
+    </div>
+
+    
+    <!-- Contact -->
+    <section id="contact" class="mt-24 mb-24">
+      <div class="p-8 backdrop-blur bg-white/5 ring-1 ring-white/10 rounded-2xl">
+        <div class="grid gap-8 md:grid-cols-2">
+          <div>
+            <h2 class="text-2xl font-semibold">Get in touch</h2>
+            <p class="mt-2 text-white/80 text-sm">Have a question or ready to book? Send us a message and our care team will follow up promptly.</p>
+            <div class="mt-6 space-y-3 text-white/80">
+              <p class="flex items-center gap-2"><i data-lucide="phone" class="w-4 h-4"></i> <a class="hover:text-white" href="tel:+17025001728">702-500-1728</a></p>
+              <p class="flex items-center gap-2"><i data-lucide="mail" class="w-4 h-4"></i> <a class="hover:text-white" href="mailto:care@celestialhealth.example">info@celestial.sprucecare.com</a></p>
+              <p class="flex items-start gap-2"><i data-lucide="map-pin" class="w-4 h-4 mt-0.5"></i> 2255 E. Renaissance Dr. Ste B<br />Las Vegas NV 89119</p>
+            </div>
+          </div>
+
+          <form class="space-y-4" onsubmit="event.preventDefault()" aria-label="Contact form">
+            <div class="grid gap-4 sm:grid-cols-2">
+              <div>
+                <label class="mb-1 block text-sm text-white/80" for="name">Full name</label>
+                <input id="name" class="w-full rounded-xl border border-white/15 bg-white/5 px-3 py-2 outline-none placeholder:text-white/40 focus:ring-2 focus:ring-blue-500" placeholder="Jane Doe" />
+              </div>
+              <div>
+                <label class="mb-1 block text-sm text-white/80" for="phone">Phone</label>
+                <input id="phone" class="w-full rounded-xl border border-white/15 bg-white/5 px-3 py-2 outline-none placeholder:text-white/40 focus:ring-2 focus:ring-blue-500" placeholder="(555) 555‑1234" />
+              </div>
+            </div>
+            <div>
+              <label class="mb-1 block text-sm text-white/80" for="email">Email</label>
+              <input id="email" type="email" class="w-full rounded-xl border border-white/15 bg-white/5 px-3 py-2 outline-none placeholder:text-white/40 focus:ring-2 focus:ring-blue-500" placeholder="you@example.com" />
+            </div>
+            <div>
+              <label class="mb-1 block text-sm text-white/80" for="service">Service</label>
+              <select id="service" class="w-full rounded-xl border border-white/15 bg-white/5 px-3 py-2 outline-none focus:ring-2 focus:ring-blue-500">
+                <option>Primary Care</option>
+                <option>Wound Care</option>
+                <option>Behavioral & Mental Health</option>
+                <option>Women’s Health</option>
+                <option>Telemedicine</option>
+                <option>Laboratory</option>
+              </select>
+            </div>
+            <div>
+              <label class="mb-1 block text-sm text-white/80" for="message">Message</label>
+              <textarea id="message" rows="4" class="w-full rounded-xl border border-white/15 bg-white/5 px-3 py-2 outline-none placeholder:text-white/40 focus:ring-2 focus:ring-blue-500" placeholder="How can we help?"></textarea>
+            </div>
+            <div class="flex items-center justify-between">
+              <p class="text-xs text-white/60">By submitting, you agree to our Terms & Privacy Policy.</p>
+              <button class="inline-flex items-center gap-2 rounded-xl bg-gradient-to-r from-sky-900 via-blue-900 to-indigo-900 px-4 py-2 font-semibold hover:bg-blue-900">
+                <i data-lucide="send" class="w-4 h-4"></i> Submit
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- <div><style>@import url(https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap);</style><a href="https://form.carepatron.com/Forms/S8d7HZlkkM8waSqVu?&e=b"rel=noopener title="Click here to get started"style="-webkit-text-size-adjust:100%;-webkit-font-smoothing:antialiased;display:inline-flex;-webkit-box-align:center;align-items:center;-webkit-box-pack:center;justify-content:center;position:relative;-webkit-tap-highlight-color:transparent;outline:0;border:0;margin:0;cursor:pointer;user-select:none;vertical-align:middle;-webkit-appearance:none;text-decoration:none;font-family:Roboto,Helvetica,Arial,sans-serif;font-weight:500;letter-spacing:0.02857em;transition:background-color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,border-color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;color:#fff;background-color:#97A7FC;text-transform:none;box-sizing:border-box;border-radius:4px;box-shadow:none;min-width:0;overflow:hidden;white-space:nowrap;text-overflow:ellipsis;height:36px;padding:6px 16px;font-size:14px;line-height:26px"target=_blank>Click here to get started</a></div> -->
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="border-t border-white/10 bg-black/40">
+    <div class="mx-auto max-w-7xl px-4 md:px-6 py-10">
+      <div class="grid gap-8 sm:grid-cols-2 md:grid-cols-4">
+        <div>
+          <p class="text-lg font-semibold">Celestial Health Solutions</p>
+          <p class="mt-2 text-sm text-white/70">Care that’s as dependable as the North Star.</p>
+        </div>
+        <div>
+          <p class="font-semibold">Services</p>
+          <ul class="mt-2 space-y-1 text-sm text-white/80">
+            <li><a href="./services.html" class="hover:text-white">Primary Care</a></li>
+            <li><a href="./services.html" class="hover:text-white">Wound Care</a></li>
+            <li><a href="./services.html" class="hover:text-white">Behavioral & Mental Health</a></li>
+            <li><a href="./services.html" class="hover:text-white">Women’s Health</a></li>
+            <li><a href="./services.html" class="hover:text-white">Telemedicine</a></li>
+            <li><a href="./services.html" class="hover:text-white">Laboratory</a></li>
+          </ul>
+        </div>
+        <div>
+          <p class="font-semibold">Contact</p>
+          <ul class="mt-2 space-y-1 text-sm text-white/80">
+            <li class="flex items-center gap-2"><i data-lucide="phone" class="w-4 h-4"></i><a href="tel:+17025001728" class="hover:text-white">702-500-1728</a>(Phone)</li>
+            <li class="flex items-center gap-2"><i data-lucide="phone" class="w-4 h-4"></i><a href="tel:+17023563102" class="hover:text-white">702-356-3102</a>(Fax)</li>
+            <li class="flex items-center gap-2"><i data-lucide="mail" class="w-4 h-4"></i><a href="mailto:care@celestialhealth.example" class="hover:text-white">care@celestialhealth@example</a></li>
+            <li class="flex items-start gap-2"><i data-lucide="map-pin" class="w-4 h-4 mt-0.5"></i> 2255 E. Renaissance Dr. Ste B<br>Las Vegas NV 89119</li>
+          </ul>
+        </div>
+        <div>
+          <p class="font-semibold">Hours</p>
+          <ul class="mt-2 space-y-1 text-sm text-white/80">
+            <li>Mon–Fri: 9:00a – 5:00p</li>
+            <li>Weekends: Closed</li>
+            <li>Holidays: Closed</li>
+          </ul>
+        </div>
+      </div>
+      <div class="mt-8 flex flex-wrap items-center justify-between gap-4 border-t border-white/10 pt-6 text-xs text-white/60">
+        <p>© <span id="year"></span> Celestial Health Solutions. All rights reserved.</p>
+        <div class="space-x-4">
+          <a href="#" class="hover:text-white">Privacy</a>
+          <a href="#" class="hover:text-white">Terms</a>
+          <a href="#" class="hover:text-white">Accessibility</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Replace Lucide placeholders with SVGs
+    lucide.createIcons();
+
+    // Create randomized twinkling stars
+    (function createStars() {
+      const container = document.getElementById('stars');
+      const STAR_COUNT = 60;
+      for (let i = 0; i < STAR_COUNT; i++) {
+        const s = document.createElement('div');
+        s.className = 'star';
+        s.style.top = Math.random() * 100 + '%';
+        s.style.left = Math.random() * 100 + '%';
+        const d = 3 + Math.random() * 4; // 3s – 7s
+        s.style.animation = `twinkle ${d}s ease-in-out ${Math.random()*5}s infinite`;
+        container.appendChild(s);
+      }
+    })();
+
+    // Year in footer
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
