@@ -16,7 +16,6 @@
     .fade-in { animation: fadeInUp .8s ease both; }
     @keyframes fadeInUp { from { opacity:0; transform: translateY(12px);} to { opacity:1; transform: translateY(0);} }
   </style>
-  
 </head>
 <body class="min-h-screen bg-gradient-to-b from-gray-950 via-gray-900 to-black text-white font-sans relative selection:bg-blue-500/30 selection:text-blue-100">
   <!-- Nebula gradients -->
@@ -44,7 +43,7 @@
       <div class="hidden md:flex items-center gap-6 text-sm">
         <a href="./services.html" class="text-white/80 hover:text-white">Services</a>
         <a href="#telemedicine" class="text-white/80 hover:text-white">TMS</a>
-        <a href="./about.html" class="text-white/80 hover:text-white">About</a>
+        <a href="#about" class="text-white/80 hover:text-white">About</a>
         <a href="#insurance" class="text-white/80 hover:text-white">Insurance</a>
         <a href="#contact" class="text-white/80 hover:text-white">Contact</a>
       </div>
@@ -57,9 +56,9 @@
   <nav class="menu-overlay" id="menu-overlay">
     <ul>
       <li><a href="./index.html">Home</a></li>
-      <li><a href="./about.html">About</a></li>
+      <li><a href="#">About</a></li>
       <li><a href="./services.html">Services</a></li>
-      <li><a href="#">Contact</a></li>
+      <li><a href="#contact">Contact</a></li>
     </ul>
   </nav>
 
@@ -82,96 +81,49 @@
 
   <!-- Hero -->
   <main id="home" class="mx-auto max-w-7xl px-4 md:px-6">
-    <section class="pt-10">
-      <div class="fade-in flex justify-center">
-      <img src="assets/chsSlvr.png" alt="logo for CHS" style="filter: brightness(1.3); border-radius: 8px;">
-      </div>
-    </section>
-
-    <!-- Services -->
-    <section id="services" class="mt-24">
-      <div class="mx-auto max-w-3xl text-center">
-        <h2 class="text-3xl font-semibold">Redefining Healthcare</h2>
-        <p class="mt-3 text-white/80">One constellation of care—connected services designed to keep you well.</p>
-      </div>
-      <div class="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-        <!-- Service cards -->
-        <div class="backdrop-blur bg-white/5 ring-1 ring-white/10 rounded-2xl p-6">
-          <div class="flex items-center gap-3">
-            <div class="flex h-10 w-10 items-center justify-center rounded-xl bg-white/10"><i data-lucide="stethoscope" class="w-6 h-6"></i></div>
-            <h3 class="text-lg font-semibold">Primary Care</h3>
-          </div>
-          <p class="mt-3 text-sm text-white/80">Comprehensive, relationship‑based care, annual physicals, chronic condition management, preventive screenings.</p>
-        </div>
-
-        <div class="backdrop-blur bg-white/5 ring-1 ring-white/10 rounded-2xl p-6">
-          <div class="flex items-center gap-3">
-            <div class="flex h-10 w-10 items-center justify-center rounded-xl bg-white/10"><i data-lucide="bandage" class="w-6 h-6"></i></div>
-            <h3 class="text-lg font-semibold">Wound Care</h3>
-          </div>
-          <p class="mt-3 text-sm text-white/80">Advanced, evidence‑based wound management including debridement, dressings, infection control, and diabetic foot care.</p>
-        </div>
-
-        <div class="backdrop-blur bg-white/5 ring-1 ring-white/10 rounded-2xl p-6">
-          <div class="flex items-center gap-3">
-            <div class="flex h-10 w-10 items-center justify-center rounded-xl bg-white/10"><i data-lucide="brain" class="w-6 h-6"></i></div>
-            <h3 class="text-lg font-semibold">Behavioral & Mental Health</h3>
-          </div>
-          <p class="mt-3 text-sm text-white/80">Compassionate support for anxiety, depression, ADHD, stress, and more. Evaluations and care coordination.</p>
-        </div>
-
-        <div class="backdrop-blur bg-white/5 ring-1 ring-white/10 rounded-2xl p-6">
-          <div class="flex items-center gap-3">
-            <div class="flex h-10 w-10 items-center justify-center rounded-xl bg-white/10"><i data-lucide="heart-pulse" class="w-6 h-6"></i></div>
-            <h3 class="text-lg font-semibold">Women’s Health</h3>
-          </div>
-          <p class="mt-3 text-sm text-white/80">Whole‑person gynecologic and reproductive care: well‑woman exams, PAP testing, and menopause support.</p>
-        </div>
-
-        <div class="backdrop-blur bg-white/5 ring-1 ring-white/10 rounded-2xl p-6">
-          <div class="flex items-center gap-3">
-            <div class="flex h-10 w-10 items-center justify-center rounded-xl bg-white/10"><i data-lucide="video" class="w-6 h-6"></i></div>
-            <h3 class="text-lg font-semibold">Telemedicine</h3>
-          </div>
-          <p class="mt-3 text-sm text-white/80">Secure virtual visits from home or on the go for follow‑ups, prescriptions, and same‑day concerns.</p>
-        </div>
-
-        <div class="backdrop-blur bg-white/5 ring-1 ring-white/10 rounded-2xl p-6">
-          <div class="flex items-center gap-3">
-            <div class="flex h-10 w-10 items-center justify-center rounded-xl bg-white/10"><i data-lucide="test-tube" class="w-6 h-6"></i></div>
-            <h3 class="text-lg font-semibold">Laboratory</h3>
-          </div>
-          <p class="mt-3 text-sm text-white/80">On‑site and partner lab testing with fast turnaround: bloodwork, COVID/flu, A1C, lipids, and more.</p>
-        </div>
-      </div>
-    </section>
 
     <!-- About -->
     <section id="about" class="mt-24">
-      <div class="grid gap-8 md:grid-cols-1">
+      <div class="mx-auto max-w-3xl text-center">
+        <h1 class="text-5xl font-semibold">About</h1>
+        <p class="mt-3 text-white/80">Celestial Health Solutions is a non-profit, multi-specialty clinic dedicated to providing high-quality, compassionate healthcare to our community. Our mission is to improve the health and well-being of every patient by delivering personalized care across a broad spectrum of medical services. As a non-profit organization, we focus on patient-centered care, accessibility, and community wellness, ensuring that every individual receives the attention and support they deserve, regardless of their background or circumstances.</p>
+      </div>
+      <div class="mt-24 grid gap-8 md:grid-cols-1">
         <div>
           <h2 class="text-3xl font-semibold">Care that’s down‑to‑earth—yet stellar</h2>
           <p class="mt-4 text-white/80">At Celestial Health Solutions, we believe great medicine starts with listening. Our team blends clinical expertise with a warm, inclusive approach, meeting you where you are and guiding you toward your healthiest life.</p>
           <p class="mt-3 text-white/80">We coordinate closely across primary care, wound care, behavioral health, women’s health, and on‑site lab testing—so you get answers faster and care that truly connects.</p>
-          <div class="mt-6 grid gap-3 sm:grid-cols-2">
-            <!-- <div class="p-4 text-sm backdrop-blur bg-white/5 ring-1 ring-white/10 rounded-2xl">
-              <p class="text-white/70">Same‑day & next‑day</p>
-              <p class="mt-1 text-lg font-semibold">Appointments</p>
-            </div> -->
-            <!-- <div class="p-4 text-sm backdrop-blur bg-white/5 ring-1 ring-white/10 rounded-2xl">
-              <p class="text-white/70">Evening hours</p>
-              <p class="mt-1 text-lg font-semibold">Select days</p>
-            </div> -->
-          </div>
+          <br>
+          <br>
+          <p>As a non-profit organization, we focus on patient-centered care, accessibility, and community wellness, ensuring that every individual receives the attention and support they deserve, regardless of their background or circumstances.</p>
         </div>
         <div class="p-6 backdrop-blur bg-white/5 ring-1 ring-white/10 rounded-2xl">
           <h3 class="text-xl font-semibold">Our Providers</h3>
-          <!-- <p class="mt-2 text-white/80 text-sm">Swap in your real team bios and credentials here. Use friendly, human language that highlights experience and philosophy of care.</p> -->
+          <p class="mt-2 text-white/80 text-lg">Primary Care & Wound Care</p>
           <div class="mt-4 grid gap-4 sm:grid-cols-2">
             <div class="rounded-2xl border border-white/10 bg-white/5 p-4">
               <p class="font-semibold">Roy Margallo, MD</p>
               <p class="text-sm text-white/70">Primary Care/Wound Care</p>
             </div>
+            <div class="rounded-2xl border border-white/10 bg-white/5 p-4">
+              <p class="font-semibold">Karen Corregidor, APRN, FNP-C</p>
+              <p class="text-sm text-white/70">Primary Care</p>
+            </div>
+            <div class="rounded-2xl border border-white/10 bg-white/5 p-4">
+              <p class="font-semibold">Sarah Quirante, APRN, FNP-C</p>
+              <p class="text-sm text-white/70">Primary Care/Wound Care/Women’s Health</p>
+            </div>
+            <div class="rounded-2xl border border-white/10 bg-white/5 p-4">
+              <p class="font-semibold">Joan Achondo, APRN, FNP-C</p>
+              <p class="text-sm text-white/70">Primary Care</p>
+            </div>
+            <div class="rounded-2xl border border-white/10 bg-white/5 p-4">
+              <p class="font-semibold">Ma Teresa Mercado, APRN, FNP-C</p>
+              <p class="text-sm text-white/70">Primary Care</p>
+            </div>
+          </div>
+          <p class="mt-5 text-white/80 text-lg">Behavioral & Mental Health</p>
+          <div class="mt-4 grid gap-4 sm:grid-cols-2">
             <div class="rounded-2xl border border-white/10 bg-white/5 p-4">
               <p class="font-semibold">John Valles, MD</p>
               <p class="text-sm text-white/70">Behavioral and Mental Health</p>
@@ -188,56 +140,30 @@
               <p class="font-semibold">Michelle Lobrin, APRN, PMHNP-BC</p>
               <p class="text-sm text-white/70">Behavioral and Mental Health</p>
             </div>
-            <div class="rounded-2xl border border-white/10 bg-white/5 p-4">
-              <p class="font-semibold">Karen Corregidor, APRN, FNP-C</p>
-              <p class="text-sm text-white/70">Primary Care</p>
-            </div>
-            <div class="rounded-2xl border border-white/10 bg-white/5 p-4">
-              <p class="font-semibold">Sarah Quirante, APRN, FNP-C</p>
-              <p class="text-sm text-white/70">Primary Care/Wound Care/Women’s Health</p>
-            </div>
-            <div class="rounded-2xl border border-white/10 bg-white/5 p-4">
-              <p class="font-semibold">Joan Achondo, APRN, FNP-C</p>
-              <p class="text-sm text-white/70">Primary Care</p>
-            </div>
           </div>
-        </div>
       </div>
     </section>
 
-    <!-- Insurance & Labs -->
-    <section id="insurance" class="mt-24">
-      <div class="grid gap-8 lg:grid-cols-2">
-        <div class="p-6 backdrop-blur bg-white/5 ring-1 ring-white/10 rounded-2xl">
-          <h2 class="text-2xl font-semibold">Insurance & Billing</h2>
-          <p class="mt-2 text-sm text-white/80">We accept most major insurance plans and offer straightforward self‑pay options. Our team will verify benefits and provide an estimate before your visit.</p>
-          <ul class="mt-4 grid gap-2 text-sm text-white/80 sm:grid-cols-2">
-            <li>• Aetna</li>
-            <li>• Blue Cross/Blue Shield</li>
-            <li>• Cigna</li>
-            <li>• Medicare/Medicaid</li>
-            <li>• UnitedHealthcare</li>
-            <li>• Sierra Health and life</li>
-            <li>• VA/Tricare</li>
-            <li>• Self‑pay</li>
-            <li>• Optum</li>
-            <li>• Deptartment of Labor</li>
-          </ul>
-        </div>
-        <div class="p-6 backdrop-blur bg-white/5 ring-1 ring-white/10 rounded-2xl">
-          <h2 class="text-2xl font-semibold flex items-center gap-2"><i data-lucide="flask-conical" class="w-6 h-6"></i> On‑Site Laboratory</h2>
-          <p class="mt-2 text-sm text-white/80">Convenient testing with rapid turnaround—ordered directly by your provider and reviewed with you in plain language.</p>
-          <div class="mt-4 grid gap-3 sm:grid-cols-2">
-            <div class="rounded-xl border border-white/10 bg-white/5 p-3 text-sm text-white/80">Complete blood count (CBC)</div>
-            <div class="rounded-xl border border-white/10 bg-white/5 p-3 text-sm text-white/80">Metabolic & lipid panels</div>
-            <div class="rounded-xl border border-white/10 bg-white/5 p-3 text-sm text-white/80">A1C & glucose</div>
-            <div class="rounded-xl border border-white/10 bg-white/5 p-3 text-sm text-white/80">Urinalysis</div>
-            <div class="rounded-xl border border-white/10 bg-white/5 p-3 text-sm text-white/80">Toxicology</div>
-            <div class="rounded-xl border border-white/10 bg-white/5 p-3 text-sm text-white/80">Pregnancy tests</div>
-          </div>
-        </div>
+    <div class="mt-24 flex flex-col items-center">
+      <h2 class="text-3xl font-semibold">Why Choose Celestial Health Solutions?</h2>
+      <ul style="list-style: disc; margin-top: 15px; margin-left: 20px; margin-right: 20px;">
+        <li>Comprehensive, patient-centered care under one roof</li>
+        <li>Experienced and compassionate providers</li>
+        <li>Advanced technology for diagnosis and treatment</li>
+        <li>Personalized care plans tailored to your unique needs</li>
+      </ul>
+    </div>
+
+    
+    <div class="mt-24 grid gap-8 md:grid-cols-1">
+      <div>
+        <h2 class="text-3xl font-semibold">Out Commitment</h2>
+        <p class="mt-4 text-white/80">At Celestial Health Solutions, our focus is on building a healthier community, one patient at a time. We strive to provide care that is not only clinically excellent but also compassionate, inclusive, and accessible.</p>
+        <br>
+        <br>
+        <h3>Experience healthcare that cares for the whole person.</h3>
       </div>
-    </section>
+    </div>
 
     <!-- Contact -->
     <section id="contact" class="mt-24 mb-24">
@@ -248,7 +174,7 @@
             <p class="mt-2 text-white/80 text-sm">Have a question or ready to book? Send us a message and our care team will follow up promptly.</p>
             <div class="mt-6 space-y-3 text-white/80">
               <p class="flex items-center gap-2"><i data-lucide="phone" class="w-4 h-4"></i> <a class="hover:text-white" href="tel:+17025001728">702-500-1728</a></p>
-              <p class="flex items-center gap-2"><i data-lucide="mail" class="w-4 h-4"></i> <a class="hover:text-white" href="mailto:care@celestialhealth.example">care@celestialhealth.example</a></p>
+              <p class="flex items-center gap-2"><i data-lucide="mail" class="w-4 h-4"></i> <a class="hover:text-white" href="mailto:care@celestialhealth.example">info@celestial.sprucecare.com</a></p>
               <p class="flex items-start gap-2"><i data-lucide="map-pin" class="w-4 h-4 mt-0.5"></i> 2255 E. Renaissance Dr. Ste B<br />Las Vegas NV 89119</p>
             </div>
           </div>
@@ -286,13 +212,16 @@
             <div class="flex items-center justify-between">
               <p class="text-xs text-white/60">By submitting, you agree to our Terms & Privacy Policy.</p>
               <button class="inline-flex items-center gap-2 rounded-xl bg-gradient-to-r from-sky-900 via-blue-900 to-indigo-900 px-4 py-2 font-semibold hover:bg-blue-900">
-                <i data-lucide="send" class="w-4 h-4"></i> Send Request
+                <i data-lucide="send" class="w-4 h-4"></i> Submit
               </button>
             </div>
           </form>
         </div>
       </div>
     </section>
+
+    <!-- <div><style>@import url(https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap);</style><a href="https://form.carepatron.com/Forms/S8d7HZlkkM8waSqVu?&e=b"rel=noopener title="Click here to get started"style="-webkit-text-size-adjust:100%;-webkit-font-smoothing:antialiased;display:inline-flex;-webkit-box-align:center;align-items:center;-webkit-box-pack:center;justify-content:center;position:relative;-webkit-tap-highlight-color:transparent;outline:0;border:0;margin:0;cursor:pointer;user-select:none;vertical-align:middle;-webkit-appearance:none;text-decoration:none;font-family:Roboto,Helvetica,Arial,sans-serif;font-weight:500;letter-spacing:0.02857em;transition:background-color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,border-color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;color:#fff;background-color:#97A7FC;text-transform:none;box-sizing:border-box;border-radius:4px;box-shadow:none;min-width:0;overflow:hidden;white-space:nowrap;text-overflow:ellipsis;height:36px;padding:6px 16px;font-size:14px;line-height:26px"target=_blank>Click here to get started</a></div> -->
+
   </main>
 
   <!-- Footer -->
