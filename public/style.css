@@ -98,3 +98,10 @@ body { font-family: 'Inter', sans-serif; }
 .menu-overlay a:hover {
   color: #ff6f61;
 }
+
+#tmsButton {
+  text-decoration: none;
+  background-color: blue;
+  padding: 10px 20px;
+  border-radius: 15px;
+}
