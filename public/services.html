@@ -17,13 +17,13 @@
     @keyframes fadeInUp { from { opacity:0; transform: translateY(12px);} to { opacity:1; transform: translateY(0);} }
   </style>
 </head>
-<body class="min-h-screen bg-gradient-to-b from-gray-950 via-gray-900 to-black text-white font-sans relative selection:bg-blue-500/30 selection:text-blue-100">
+<body class="min-h-screen bg-gray-950 text-white font-sans relative selection:bg-blue-500/30 selection:text-blue-100">
   <!-- Nebula gradients -->
   <div aria-hidden class="pointer-events-none fixed inset-0 -z-20 overflow-hidden">
-    <div class="absolute -top-40 -left-40 h-[48rem] w-[48rem] rounded-full blur-3xl opacity-25 bg-gradient-to-br from-blue-700 via-indigo-800 to-sky-700"></div>
-    <div class="absolute -bottom-56 -right-40 h-[46rem] w-[46rem] rounded-full blur-3xl opacity-20 bg-gradient-to-tr from-sky-600 via-blue-700 to-indigo-900"></div>
+    <div class="absolute -top-40 -left-40 h-[48rem] w-[48rem] rounded-full blur-3xl opacity-25 bg-gradient-to-br from-blue-900 via-indigo-950 to-sky-900"></div>
+    <div class="absolute -bottom-56 -right-40 h-[46rem] w-[46rem] rounded-full blur-3xl opacity-20 bg-gradient-to-tr from-blue-900 via-indigo-950 to-sky-900"></div>
     <div class="absolute inset-0 opacity-20 bg-[radial-gradient(#ffffff_1px,transparent_1px)] [background-size:6px_6px]"></div>
-    <div class="absolute inset-0 opacity-15 bg-[radial-gradient(#93c5fd_1px,transparent_1px)] [background-size:10px_10px]"></div>
+    <div class="absolute inset-0 opacity-15 bg-[radial-gradient(#00080A)] [background-size:10px_10px]"></div>
   </div>
   <!-- Dynamic stars container -->
   <div id="stars" class="absolute inset-0 -z-10"></div>
@@ -32,7 +32,7 @@
   <nav class="sticky top-0 z-50 backdrop-blur supports-[backdrop-filter]:bg-black/40 border-b border-blue-900/60">
     <div class="max-w-7xl mx-auto flex items-center justify-between px-4 md:px-6 py-3">
       <a href="./index.html" class="flex items-center gap-3">
-        <span class="inline-flex h-9 w-9 items-center justify-center rounded-xl bg-gradient-to-br from-sky-900 via-blue-900 to-indigo-900 shadow-lg shadow-blue-900/30">
+        <span class="inline-flex h-9 w-9 items-center justify-center rounded-xl bg-gradient-to-br from-sky-950 via-blue-950 to-indigo-900 shadow-lg shadow-blue-900/30">
           <i data-lucide="stethoscope" class="w-5 h-5"></i>
         </span>
         <div class="leading-tight">
@@ -41,11 +41,11 @@
         </div>
       </a>
       <div class="hidden md:flex items-center gap-6 text-sm">
-          <a href="./about.html" class="text-white/80 hover:text-white">About</a>
-        <a href="./services.html" class="text-white/80 hover:text-white">Services</a>
-        <a href="./tms.html" class="text-white/80 hover:text-white">TMS</a>
-        <a href="./insurance.html" class="text-white/80 hover:text-white">Insurance</a>
-        <a href="#contact" class="text-white/80 hover:text-white">Contact</a>
+          <a href="./about.html" class="text-white hover:text-white">About</a>
+        <a href="./services.html" class="text-white hover:text-white">Services</a>
+        <a href="./tms.html" class="text-white hover:text-white">TMS</a>
+        <a href="./insurance.html" class="text-white hover:text-white">Insurance</a>
+        <a href="#contact" class="text-white hover:text-white">Contact</a>
       </div>
       <button class="menu-btn md:hidden" id="menu-btn" aria-label="Toggle menu">
         <i data-lucide="menu"></i>
@@ -88,7 +88,7 @@
     <section id="services" class="mt-24">
       <div class="mx-auto max-w-3xl text-center">
         <h1 class="text-5xl font-semibold">Services</h1>
-        <p class="mt-3 text-white/80">At Celestial Health Solutions, we provide comprehensive, patient-centered care for individuals and families. Our goal is to support your overall health and wellness through a wide range of services, delivered with expertise, compassion, and convenience.</p>
+        <p class="mt-3 text-white">At Celestial Health Solutions, we provide comprehensive, patient-centered care for individuals and families. Our goal is to support your overall health and wellness through a wide range of services, delivered with expertise, compassion, and convenience.</p>
       </div>
       <div class="mt-10 grid gap-5 sm:grid-cols-2">
         <!-- Service cards -->
@@ -97,7 +97,7 @@
             <div class="flex h-10 w-10 items-center justify-center rounded-xl bg-white/10"><i data-lucide="stethoscope" class="w-6 h-6"></i></div>
             <h3 class="text-lg font-semibold">Primary Care</h3>
           </div>
-          <p class="mt-3 text-sm text-white/80">Our primary care services focus on prevention, early detection, and management of chronic conditions. From routine check-ups and vaccinations to managing diabetes, hypertension, and other health concerns, we partner with you to keep your health on track.
+          <p class="mt-3 text-sm text-white">Our primary care services focus on prevention, early detection, and management of chronic conditions. From routine check-ups and vaccinations to managing diabetes, hypertension, and other health concerns, we partner with you to keep your health on track.
           </p>
         </div>
 
@@ -106,7 +106,7 @@
             <div class="flex h-10 w-10 items-center justify-center rounded-xl bg-white/10"><i data-lucide="bandage" class="w-6 h-6"></i></div>
             <h3 class="text-lg font-semibold">Wound Care</h3>
           </div>
-          <p class="mt-3 text-sm text-white/80">We offer advanced wound care for both acute and chronic wounds, including diabetic ulcers, pressure sores, and post-surgical wounds. Our team uses evidence-based treatments and personalized care plans to promote faster healing and prevent complications.
+          <p class="mt-3 text-sm text-white">We offer advanced wound care for both acute and chronic wounds, including diabetic ulcers, pressure sores, and post-surgical wounds. Our team uses evidence-based treatments and personalized care plans to promote faster healing and prevent complications.
 
 </p>
         </div>
@@ -116,7 +116,7 @@
             <div class="flex h-10 w-10 items-center justify-center rounded-xl bg-white/10"><i data-lucide="brain" class="w-6 h-6"></i></div>
             <h3 id="behavioral" class="text-lg font-semibold">Behavioral & Mental Health</h3>
           </div>
-          <p class="mt-3 text-sm text-white/80">Your mental health matters. Our behavioral and mental health services provide evaluation, therapy, and ongoing support for conditions such as depression, anxiety, and stress-related disorders. We are committed to helping you achieve emotional well-being and balance.
+          <p class="mt-3 text-sm text-white">Your mental health matters. Our behavioral and mental health services provide evaluation, therapy, and ongoing support for conditions such as depression, anxiety, and stress-related disorders. We are committed to helping you achieve emotional well-being and balance.
           </p>
         </div>
 
@@ -125,7 +125,7 @@
             <div class="flex h-10 w-10 items-center justify-center rounded-xl bg-white/10"><i data-lucide="video" class="w-6 h-6"></i></div>
             <h3 class="text-lg font-semibold">Telemedicine</h3>
           </div>
-          <p class="mt-3 text-sm text-white/80">We offer secure telemedicine visits, you can connect with your provider virtually from home, work, or on the go. Quick, convenient, and confidential care right at your fingertips.
+          <p class="mt-3 text-sm text-white">We offer secure telemedicine visits, you can connect with your provider virtually from home, work, or on the go. Quick, convenient, and confidential care right at your fingertips.
           </p>
         </div>
 
@@ -134,7 +134,7 @@
             <div class="flex h-10 w-10 items-center justify-center rounded-xl bg-white/10"><i data-lucide="heart-pulse" class="w-6 h-6"></i></div>
             <h3 class="text-lg font-semibold">Women’s Health</h3>
           </div>
-          <p class="mt-3 text-sm text-white/80">We provide comprehensive care tailored to women, including annual exams, reproductive health, menopause management, and preventive screenings. Our team prioritizes your comfort and well-being at every stage of life.
+          <p class="mt-3 text-sm text-white">We provide comprehensive care tailored to women, including annual exams, reproductive health, menopause management, and preventive screenings. Our team prioritizes your comfort and well-being at every stage of life.
           </p>
         </div>
 
@@ -143,7 +143,7 @@
             <div class="flex h-10 w-10 items-center justify-center rounded-xl bg-white/10"><i data-lucide="test-tube" class="w-6 h-6"></i></div>
             <h3 class="text-lg font-semibold">Laboratory</h3>
           </div>
-          <p class="mt-3 text-sm text-white/80">Our in-house laboratory testing ensures accurate and timely results for a wide range of health needs, including blood work, metabolic panels, and other routine labs. Quick access to lab results allows us to make informed decisions for your care.
+          <p class="mt-3 text-sm text-white">Our in-house laboratory testing ensures accurate and timely results for a wide range of health needs, including blood work, metabolic panels, and other routine labs. Quick access to lab results allows us to make informed decisions for your care.
           </p>
         </div>
 
@@ -152,7 +152,7 @@
             <div class="flex h-10 w-10 items-center justify-center rounded-xl bg-white/10"><i data-lucide="computer" class="w-6 h-6"></i></div>
             <h3 class="text-lg font-semibold">Diagnositc Testing</h3>
           </div>
-          <p class="mt-3 text-sm text-white/80">We offer essential diagnostic tests to help identify and monitor health conditions:
+          <p class="mt-3 text-sm text-white">We offer essential diagnostic tests to help identify and monitor health conditions:
           </p>
           <ul style="list-style: disc; margin-left: 20px; margin-right: 20px;">
             <li>EKGs (Electrocardiograms): Evaluate heart rhythm and detect heart conditions</li>
@@ -160,6 +160,14 @@
             <li>ABIs (Ankle-Brachial Tests): Assess blood flow in legs and detect peripheral artery disease</li>
             <li>Other diagnostic screenings as needed to support comprehensive care</li>
           </ul>
+        </div>
+
+        <div id="diagnostic" class="backdrop-blur bg-white/5 ring-1 ring-white/10 rounded-2xl p-6">
+          <div class="flex items-center gap-3">
+            <div class="flex h-10 w-10 items-center justify-center rounded-xl bg-white/10"><i data-lucide="computer" class="w-6 h-6"></i></div>
+            <h3 class="text-lg font-semibold">Transcranial Magnetic Stimulation (TMS)</h3>
+          </div>
+          <p class="mt-3 text-sm text-white">Celestial Health Solutions offers TMS therapy, a safe, non-invasive, and FDA-cleared treatment for depression and other mood disorders. TMS uses gentle magnetic pulses to stimulate specific areas of the brain, helping patients who may not have responded adequately to medications.</p>
         </div>
 
 
@@ -181,9 +189,10 @@
         <div class="grid gap-8 md:grid-cols-2">
           <div>
             <h2 class="text-2xl font-semibold">Get in touch</h2>
-            <p class="mt-2 text-white/80 text-sm">Have a question or ready to book? Send us a message and our care team will follow up promptly.</p>
-            <div class="mt-6 space-y-3 text-white/80">
+            <p class="mt-2 text-white text-sm">Have a question or ready to book? Send us a message and our care team will follow up promptly.</p>
+            <div class="mt-6 space-y-3 text-white">
               <p class="flex items-center gap-2"><i data-lucide="phone" class="w-4 h-4"></i> <a class="hover:text-white" href="tel:+17025001728">702-500-1728</a></p>
+              <p class="flex items-center gap-2"><i data-lucide="printer" class="w-4 h-4"></i> <a class="hover:text-white" href="tel:+17025001728">702-356-3102</a></p>
               <p class="flex items-center gap-2"><i data-lucide="mail" class="w-4 h-4"></i> <a class="hover:text-white" href="mailto:care@celestialhealth.example">info@celestial.sprucecare.com</a></p>
               <p class="flex items-start gap-2"><i data-lucide="map-pin" class="w-4 h-4 mt-0.5"></i> 2255 E. Renaissance Dr. Ste B<br />Las Vegas NV 89119</p>
             </div>
@@ -192,20 +201,20 @@
           <form class="space-y-4" onsubmit="event.preventDefault()" aria-label="Contact form">
             <div class="grid gap-4 sm:grid-cols-2">
               <div>
-                <label class="mb-1 block text-sm text-white/80" for="name">Full name</label>
+                <label class="mb-1 block text-sm text-white" for="name">Full name</label>
                 <input id="name" class="w-full rounded-xl border border-white/15 bg-white/5 px-3 py-2 outline-none placeholder:text-white/40 focus:ring-2 focus:ring-blue-500" placeholder="Jane Doe" />
               </div>
               <div>
-                <label class="mb-1 block text-sm text-white/80" for="phone">Phone</label>
+                <label class="mb-1 block text-sm text-white" for="phone">Phone</label>
                 <input id="phone" class="w-full rounded-xl border border-white/15 bg-white/5 px-3 py-2 outline-none placeholder:text-white/40 focus:ring-2 focus:ring-blue-500" placeholder="(555) 555‑1234" />
               </div>
             </div>
             <div>
-              <label class="mb-1 block text-sm text-white/80" for="email">Email</label>
+              <label class="mb-1 block text-sm text-white" for="email">Email</label>
               <input id="email" type="email" class="w-full rounded-xl border border-white/15 bg-white/5 px-3 py-2 outline-none placeholder:text-white/40 focus:ring-2 focus:ring-blue-500" placeholder="you@example.com" />
             </div>
             <div>
-              <label class="mb-1 block text-sm text-white/80" for="service">Service</label>
+              <label class="mb-1 block text-sm text-white" for="service">Service</label>
               <select id="service" class="w-full rounded-xl border border-white/15 bg-white/5 px-3 py-2 outline-none focus:ring-2 focus:ring-blue-500">
                 <option>Primary Care</option>
                 <option>Wound Care</option>
@@ -213,15 +222,16 @@
                 <option>Women’s Health</option>
                 <option>Telemedicine</option>
                 <option>Laboratory</option>
+                <option>Transcranial Magnetic Stimulation (TMS)</option>
               </select>
             </div>
             <div>
-              <label class="mb-1 block text-sm text-white/80" for="message">Message</label>
+              <label class="mb-1 block text-sm text-white" for="message">Message</label>
               <textarea id="message" rows="4" class="w-full rounded-xl border border-white/15 bg-white/5 px-3 py-2 outline-none placeholder:text-white/40 focus:ring-2 focus:ring-blue-500" placeholder="How can we help?"></textarea>
             </div>
             <div class="flex items-center justify-between">
               <p class="text-xs text-white/60">By submitting, you agree to our Terms & Privacy Policy.</p>
-              <button class="inline-flex items-center gap-2 rounded-xl bg-gradient-to-r from-sky-900 via-blue-900 to-indigo-900 px-4 py-2 font-semibold hover:bg-blue-900">
+              <button class="inline-flex items-center gap-2 rounded-xl px-4 py-2 font-semibold hover:bg-blue-900" style="background-color: #1f3165;">
                 <i data-lucide="send" class="w-4 h-4"></i> Submit
               </button>
             </div>
@@ -244,27 +254,28 @@
         </div>
         <div>
           <p class="font-semibold">Services</p>
-          <ul class="mt-2 space-y-1 text-sm text-white/80">
+          <ul class="mt-2 space-y-1 text-sm text-white">
             <li><a href="./services.html#primary" class="hover:text-white">Primary Care</a></li>
             <li><a href="./services.html#would" class="hover:text-white">Wound Care</a></li>
             <li><a href="./services.html#behavioral" class="hover:text-white">Behavioral & Mental Health</a></li>
             <li><a href="./services.html#womens" class="hover:text-white">Women’s Health</a></li>
             <li><a href="./services.html#lab" class="hover:text-white">Laboratory</a></li>
             <li><a href="./services.html#diagnostic" class="hover:text-white">Diagnostic Testing</a></li>
+            <li><a href="./TMS.html" class="hover:text-white">Transcranial Magnetic Stimulation (TMS)</a></li>
           </ul>
         </div>
         <div>
           <p class="font-semibold">Contact</p>
-          <ul class="mt-2 space-y-1 text-sm text-white/80">
+          <ul class="mt-2 space-y-1 text-sm text-white">
             <li class="flex items-center gap-2"><i data-lucide="phone" class="w-4 h-4"></i><a href="tel:+17025001728" class="hover:text-white">702-500-1728</a>(Phone)</li>
             <li class="flex items-center gap-2"><i data-lucide="phone" class="w-4 h-4"></i><a href="tel:+17023563102" class="hover:text-white">702-356-3102</a>(Fax)</li>
-            <li class="flex items-center gap-2"><i data-lucide="mail" class="w-4 h-4"></i><a href="mailto:care@celestialhealth.example" class="hover:text-white">care@celestialhealth@example</a></li>
+            <li class="flex items-center gap-2"><i data-lucide="mail" class="w-4 h-4"></i><a href="mailto:care@celestialhealth.example" class="hover:text-white">info@celestial.sprucecare.com</a></li>
             <li class="flex items-start gap-2"><i data-lucide="map-pin" class="w-4 h-4 mt-0.5"></i> 2255 E. Renaissance Dr. Ste B<br>Las Vegas NV 89119</li>
           </ul>
         </div>
         <div>
           <p class="font-semibold">Hours</p>
-          <ul class="mt-2 space-y-1 text-sm text-white/80">
+          <ul class="mt-2 space-y-1 text-sm text-white">
             <li>Mon–Fri: 9:00a – 5:00p</li>
             <li>Weekends: Closed</li>
             <li>Holidays: Closed</li>
