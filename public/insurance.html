@@ -46,7 +46,6 @@
         <a href="./services.html" class="text-white hover:text-white">Services</a>
         <a href="./TMS.html" class="text-white hover:text-white">TMS</a>
         <a href="./insurance.html" class="text-white hover:text-white">Insurance</a>
-        <a href="#contact" class="text-white hover:text-white">Contact</a>
       </div>
       <button class="menu-btn md:hidden" id="menu-btn" aria-label="Toggle menu">
         <i data-lucide="menu"></i>
@@ -61,7 +60,6 @@
       <li><a href="./services.html">Services</a></li>
       <li><a href="./TMS.html">TMS</a></li>
       <li><a href="./insurance.html">Insurance</a></li>
-      <li><a href="#contact">Contact</a></li>
     </ul>
   </nav>
 
@@ -89,11 +87,11 @@
     <section id="insurance" class="mt-24">
       <div class="mx-auto max-w-3xl text-center">
         <h1 class="text-5xl font-semibold">Insurance</h1>
-        <p class="mt-3 text-white">At Celestial Health Solutions, we make healthcare accessible and affordable for all patients. We accept a wide range of insurance plans to help you receive the care you need with ease.</p>
+        <p class="mt-3 text-white" style="color: orange;">At Celestial Health Solutions, we make healthcare accessible and affordable for all patients. We accept a wide range of insurance plans to help you receive the care you need with ease.</p>
       </div>
       <div class="mt-24 grid gap-8 md:grid-cols-1">
         <div>
-          <h2 class="text-3xl font-semibold">Insurance Providers We Accept</h2>
+          <h2 class="text-3xl font-semibold" style="color: skyblue;">Insurance Providers We Accept</h2>
           <p class="mt-4 text-white">At Celestial Health Solutions, we believe great medicine starts with listening. Our team blends clinical expertise with a warm, inclusive approach, meeting you where you are and guiding you toward your healthiest life.</p>
           <p class="mt-3 text-white">We coordinate closely across primary care, wound care, behavioral health, women’s health, and on‑site lab testing—so you get answers faster and care that truly connects.</p>
           <br>
@@ -130,70 +128,12 @@
     </div>
 
     
-    <!-- Contact -->
-    <section id="contact" class="mt-24 mb-24">
-      <div class="p-8 backdrop-blur bg-white/5 ring-1 ring-white/10 rounded-2xl">
-        <div class="grid gap-8 md:grid-cols-2">
-          <div>
-            <h2 class="text-2xl font-semibold">Get in touch</h2>
-            <p class="mt-2 text-white text-sm">Have a question or ready to book? Send us a message and our care team will follow up promptly.</p>
-            <div class="mt-6 space-y-3 text-white">
-              <p class="flex items-center gap-2"><i data-lucide="phone" class="w-4 h-4"></i> <a class="hover:text-white" href="tel:+17025001728">702-500-1728</a></p>
-              <p class="flex items-center gap-2"><i data-lucide="printer" class="w-4 h-4"></i> <a class="hover:text-white" href="tel:+17025001728">702-356-3102</a></p>
-              <p class="flex items-center gap-2"><i data-lucide="mail" class="w-4 h-4"></i> <a class="hover:text-white" href="mailto:care@celestialhealth.example">info@celestial.sprucecare.com</a></p>
-              <p class="flex items-start gap-2"><i data-lucide="map-pin" class="w-4 h-4 mt-0.5"></i> 2255 E. Renaissance Dr. Ste B<br />Las Vegas NV 89119</p>
-            </div>
-          </div>
 
-          <form target="_blank" action="https://formsubmit.co/b048602abede5eee39981b3e3d338254" class="space-y-4" method="POST" aria-label="Contact form">
-            <div class="grid gap-4 sm:grid-cols-2">
-              <div>
-                <label class="mb-1 block text-sm text-white" for="name">Full name</label>
-                <input id="name" class="w-full rounded-xl border border-white/15 bg-white/5 px-3 py-2 outline-none placeholder:text-white/40 focus:ring-2 focus:ring-blue-500" placeholder="Jane Doe" />
-              </div>
-              <div>
-                <label class="mb-1 block text-sm text-white" for="phone">Phone</label>
-                <input id="phone" class="w-full rounded-xl border border-white/15 bg-white/5 px-3 py-2 outline-none placeholder:text-white/40 focus:ring-2 focus:ring-blue-500" placeholder="(555) 555‑1234" />
-              </div>
-            </div>
-            <div>
-              <label class="mb-1 block text-sm text-white" for="email">Email</label>
-              <input id="email" type="email" class="w-full rounded-xl border border-white/15 bg-white/5 px-3 py-2 outline-none placeholder:text-white/40 focus:ring-2 focus:ring-blue-500" placeholder="you@example.com" />
-            </div>
-            <div>
-              <label class="mb-1 block text-sm text-white" for="service">Service</label>
-              <select id="service" class="w-full rounded-xl border border-white/15 bg-white/5 px-3 py-2 outline-none focus:ring-2 focus:ring-blue-500">
-                <option>Primary Care</option>
-                <option>Wound Care</option>
-                <option>Behavioral & Mental Health</option>
-                <option>Women’s Health</option>
-                <option>Telemedicine</option>
-                <option>Laboratory</option>
-                <option>Transcranial Magnetic Stimulation (TMS)</option>
-              </select>
-            </div>
-            <div>
-              <label class="mb-1 block text-sm text-white" for="message">Message</label>
-              <textarea id="message" rows="4" class="w-full rounded-xl border border-white/15 bg-white/5 px-3 py-2 outline-none placeholder:text-white/40 focus:ring-2 focus:ring-blue-500" placeholder="How can we help?"></textarea>
-            </div>
-            <input type="hidden" name="_next" value="https://celestialhealthsolutions.com/thanks.html">
-            <div class="flex items-center justify-between">
-              <p class="text-xs text-white/60">By submitting, you agree to our Terms & Privacy Policy.</p>
-              <button type="submit" class="inline-flex items-center gap-2 rounded-xl px-4 py-2 font-semibold hover:bg-blue-900" style="background-color: #1f3165;">
-                <i data-lucide="send" class="w-4 h-4"></i> Send Request
-              </button>
-            </div>
-          </form>
-        </div>
-      </div>
-    </section>
-
-    <!-- <div><style>@import url(https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap);</style><a href="https://form.carepatron.com/Forms/S8d7HZlkkM8waSqVu?&e=b"rel=noopener title="Click here to get started"style="-webkit-text-size-adjust:100%;-webkit-font-smoothing:antialiased;display:inline-flex;-webkit-box-align:center;align-items:center;-webkit-box-pack:center;justify-content:center;position:relative;-webkit-tap-highlight-color:transparent;outline:0;border:0;margin:0;cursor:pointer;user-select:none;vertical-align:middle;-webkit-appearance:none;text-decoration:none;font-family:Roboto,Helvetica,Arial,sans-serif;font-weight:500;letter-spacing:0.02857em;transition:background-color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,border-color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;color:#fff;background-color:#97A7FC;text-transform:none;box-sizing:border-box;border-radius:4px;box-shadow:none;min-width:0;overflow:hidden;white-space:nowrap;text-overflow:ellipsis;height:36px;padding:6px 16px;font-size:14px;line-height:26px"target=_blank>Click here to get started</a></div> -->
 
   </main>
 
   <!-- Footer -->
-  <footer class="border-t border-white/10 bg-black/40">
+  <footer class="border-t border-white/10 bg-black/40 mt-20">
     <div class="mx-auto max-w-7xl px-4 md:px-6 py-10">
       <div class="grid gap-8 sm:grid-cols-2 md:grid-cols-4">
         <div>

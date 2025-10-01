@@ -46,7 +46,6 @@
         <a href="./services.html" class="text-white hover:text-white">Services</a>
         <a href="./TMS.html" class="text-white hover:text-white">TMS</a>
         <a href="./insurance.html" class="text-white hover:text-white">Insurance</a>
-        <a href="#contact" class="text-white hover:text-white">Contact</a>
       </div>
       <button class="menu-btn md:hidden" id="menu-btn" aria-label="Toggle menu">
         <i data-lucide="menu"></i>
@@ -61,7 +60,6 @@
       <li><a href="./services.html">Services</a></li>
       <li><a href="./TMS.html">TMS</a></li>
       <li><a href="./insurance.html">Insurance</a></li>
-      <li><a href="#contact">Contact</a></li>
     </ul>
   </nav>
 
@@ -100,7 +98,7 @@
         <!-- Service cards -->
         <div class="backdrop-blur bg-white/5 ring-1 ring-white/10 rounded-2xl p-6">
           <div class="flex items-center gap-3">
-            <div class="flex h-10 w-10 items-center justify-center rounded-xl bg-white/10"><i data-lucide="stethoscope" class="w-6 h-6"></i></div>
+            <div class="flex h-10 w-10 items-center justify-center rounded-xl bg-white/10"><i data-lucide="stethoscope" class="w-6 h-6" style="color: red;"></i></div>
             <h3 class="text-lg font-semibold">Primary Care</h3>
           </div>
           <p class="mt-3 text-sm text-white">Comprehensive, relationship‑based care, annual physicals, chronic condition management, preventive screenings.</p>
@@ -108,15 +106,26 @@
 
         <div class="backdrop-blur bg-white/5 ring-1 ring-white/10 rounded-2xl p-6">
           <div class="flex items-center gap-3">
-            <div class="flex h-10 w-10 items-center justify-center rounded-xl bg-white/10"><i data-lucide="magnet" class="w-6 h-6"></i></div>
+            <div class="flex h-10 w-10 items-center justify-center rounded-xl bg-white/10"><i data-lucide="magnet" class="w-6 h-6" style="color: #cfff00;"></i></div>
             <h3 class="text-lg font-semibold">Transcranial Magnetic Stimulation (TMS)</h3>
           </div>
           <p class="mt-3 text-sm text-white">Celestial Health Solutions offers TMS therapy, a safe, non-invasive, and FDA-cleared treatment for depression and other mood disorders. TMS uses gentle magnetic pulses to stimulate specific areas of the brain, helping patients who may not have responded adequately to medications.</p>
+          <span style="
+            position: absolute;
+            right: 50px;
+            top: 56px;
+            font-size: 14px;
+            padding: 0 6px;
+            background-color: #cfff00;
+            border-radius: 5px;
+            color: black;">
+            <a href="./TMS.html" target="_blank" rel="noopener noreferrer" style="text-decoration: none;">Learn more</a>
+          </span>
         </div>
 
         <div class="backdrop-blur bg-white/5 ring-1 ring-white/10 rounded-2xl p-6">
           <div class="flex items-center gap-3">
-            <div class="flex h-10 w-10 items-center justify-center rounded-xl bg-white/10"><i data-lucide="brain" class="w-6 h-6"></i></div>
+            <div class="flex h-10 w-10 items-center justify-center rounded-xl bg-white/10"><i data-lucide="brain" class="w-6 h-6" style="color: #33ff00;"></i></div>
             <h3 class="text-lg font-semibold">Behavioral & Mental Health</h3>
           </div>
           <p class="mt-3 text-sm text-white">Compassionate support for anxiety, depression, ADHD, stress, and more. Evaluations and care coordination.</p>
@@ -124,7 +133,7 @@
 
         <div class="backdrop-blur bg-white/5 ring-1 ring-white/10 rounded-2xl p-6">
           <div class="flex items-center gap-3">
-            <div class="flex h-10 w-10 items-center justify-center rounded-xl bg-white/10"><i data-lucide="heart-pulse" class="w-6 h-6"></i></div>
+            <div class="flex h-10 w-10 items-center justify-center rounded-xl bg-white/10"><i data-lucide="heart-pulse" class="w-6 h-6" style="color: #fc3edc;"></i></div>
             <h3 class="text-lg font-semibold">Women’s Health</h3>
           </div>
           <p class="mt-3 text-sm text-white">Whole‑person gynecologic and reproductive care: well‑woman exams, PAP testing, and menopause support.</p>
@@ -133,7 +142,7 @@
         
         <div class="backdrop-blur bg-white/5 ring-1 ring-white/10 rounded-2xl p-6">
           <div class="flex items-center gap-3">
-            <div class="flex h-10 w-10 items-center justify-center rounded-xl bg-white/10"><i data-lucide="bandage" class="w-6 h-6"></i></div>
+            <div class="flex h-10 w-10 items-center justify-center rounded-xl bg-white/10"><i data-lucide="bandage" class="w-6 h-6" style="color: orange;"></i></div>
             <h3 class="text-lg font-semibold">Wound Care</h3>
           </div>
           <p class="mt-3 text-sm text-white">Advanced, evidence‑based wound management including debridement, dressings, infection control, and diabetic foot care.</p>
@@ -141,7 +150,7 @@
 
         <div class="backdrop-blur bg-white/5 ring-1 ring-white/10 rounded-2xl p-6">
           <div class="flex items-center gap-3">
-            <div class="flex h-10 w-10 items-center justify-center rounded-xl bg-white/10"><i data-lucide="test-tube" class="w-6 h-6"></i></div>
+            <div class="flex h-10 w-10 items-center justify-center rounded-xl bg-white/10"><i data-lucide="test-tube" class="w-6 h-6" style="color: #004cff;"></i></div>
             <h3 class="text-lg font-semibold">Laboratory</h3>
           </div>
           <p class="mt-3 text-sm text-white">On‑site and partner lab testing with fast turnaround: bloodwork, COVID/flu, A1C, lipids, and more.</p>
@@ -236,7 +245,7 @@
     </section>
 
     <!-- Contact -->
-    <section id="contact" class="mt-24 mb-24">
+    <!-- <section id="contact" class="mt-24 mb-24">
       <div class="p-8 backdrop-blur bg-white/5 ring-1 ring-white/10 rounded-2xl">
         <div class="grid gap-8 md:grid-cols-2">
           <div>
@@ -291,11 +300,11 @@
           </form>
         </div>
       </div>
-    </section>
+    </section> -->
   </main>
 
   <!-- Footer -->
-  <footer class="border-t border-white/10 bg-black/40">
+  <footer class="border-t border-white/10 bg-black/40 mt-20">
     <div class="mx-auto max-w-7xl px-4 md:px-6 py-10">
       <div class="grid gap-8 sm:grid-cols-2 md:grid-cols-4">
         <div>
